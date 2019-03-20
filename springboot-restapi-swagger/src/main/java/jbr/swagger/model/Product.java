@@ -1,63 +1,74 @@
 package jbr.swagger.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Product Model.
  * 
  * @author Ranjith Sekar
  * @since 2018, Jun 20
  */
+@ApiModel(value = "Product POJO", description = "Product Value Object")
 public class Product {
 
-	private String id;
-	private String name;
-	private String type;
-	private String price;
+  @ApiModelProperty(notes = "Product ID", example = "100", name = "prod id", dataType = "String")
+  private String id;
 
-	public Product() {
-	}
+  @ApiModelProperty(notes = "Product NAME")
+  private String name;
 
-	public Product(String id, String name, String type, String price) {
-		this.id = id;
-		this.name = name;
-		this.type = type;
-		this.price = price;
-	}
+  @ApiModelProperty(notes = "Product TYPE")
+  private String type;
 
-	public String getName() {
-		return name;
-	}
+  @ApiModelProperty(notes = "Product PRICE")
+  private String price;
 
-	public String getId() {
-		return id;
-	}
+  public Product() {
+  }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+  public Product(String id, String name, String type, String price) {
+    this.id = id;
+    this.name = name;
+    this.type = type;
+    this.price = price;
+  }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public String getType() {
-		return type;
-	}
+  public String getId() {
+    return id;
+  }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+  public void setId(String id) {
+    this.id = id;
+  }
 
-	public String getPrice() {
-		return price;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public void setPrice(String price) {
-		this.price = price;
-	}
+  public String getType() {
+    return type;
+  }
 
-	@Override
-	public String toString() {
-		return "id:" + this.id + " | name: " + this.name + " | type: " + this.type + " | price: " + this.price;
-	}
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getPrice() {
+    return price;
+  }
+
+  public void setPrice(String price) {
+    this.price = price;
+  }
+
+  @Override
+  public String toString() {
+    return "id:" + this.id + " | name: " + this.name + " | type: " + this.type + " | price: " + this.price;
+  }
 
 }
