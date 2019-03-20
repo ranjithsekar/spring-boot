@@ -1,0 +1,6 @@
+1) Get response as json
+http://localhost:6060/restapi-swagger/v2/api-docs
+copy the response and paste @ https://editor.swagger.io/
+
+2) Get UI
+http://localhost:6060/restapi-swagger/swagger-ui.html
