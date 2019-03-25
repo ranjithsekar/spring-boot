@@ -3,12 +3,6 @@ package jbr.swagger.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-/**
- * Product Model.
- * 
- * @author Ranjith Sekar
- * @since 2018, Jun 20
- */
 @ApiModel(value = "Product POJO", description = "Product Value Object")
 public class Product {
 

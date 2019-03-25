@@ -18,12 +18,6 @@ import io.swagger.annotations.ApiResponses;
 import jbr.swagger.model.Product;
 import jbr.swagger.service.ProductService;
 
-/**
- * Product Controller
- * 
- * @author Ranjith Sekar
- * @since 2018, Jun 20
- */
 @RestController
 @Api(value = "Product API Doc", description = "Get Product APIs")
 public class ProductController {
