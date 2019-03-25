@@ -4,3 +4,7 @@ copy the response and paste @ https://editor.swagger.io/
 
 2) Get UI
 http://localhost:6060/restapi-swagger/swagger-ui.html
+
+3) RESTApi Response
+http://localhost:6060/restapi-swagger/products
+http://localhost:6060/restapi-swagger/products/100
