@@ -11,9 +11,8 @@ import jbr.swagger.model.Product;
 @Service
 public class ProductService {
 
-  List<Product> products = Stream
-      .of(new Product("100", "Galaxy S8", "Mobile", "50000"), new Product("200", "Honda Shine", "Vehicle", "60000"),
-          new Product("300", "Dell Vostro", "Laptop", "75000"))
+  List<Product> products = Stream.of(new Product("100", "Galaxy S8", "Mobile", "50000"),
+      new Product("200", "Honda Shine", "Vehicle", "60000"), new Product("300", "Dell Vostro", "Laptop", "75000"))
       .collect(Collectors.toList());
 
   public List<Product> getAllProducts() {
@@ -21,11 +20,7 @@ public class ProductService {
   }
 
   public Product getProductById(String id) {
-    return products.stream()
-        .filter(e -> e.getId()
-            .equals(id))
-        .findFirst()
-        .get();
+    return products.stream().filter(e -> e.getId().equals(id)).findFirst().get();
   }
 
   public void addProduct(Product product) {
@@ -37,8 +32,7 @@ public class ProductService {
     for (int i = 0; i < products.size(); i++) {
       Product currentProduct = products.get(i);
 
-      if (currentProduct.getId()
-          .equals(id)) {
+      if (currentProduct.getId().equals(id)) {
         products.set(i, product);
         return;
       }

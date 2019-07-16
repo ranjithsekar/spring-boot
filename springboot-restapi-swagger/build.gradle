@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+	//compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'io.springfox:springfox-swagger2:2.9.2'
 	implementation 'io.springfox:springfox-core:2.9.2'
@@ -21,4 +22,5 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	//testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
 }
