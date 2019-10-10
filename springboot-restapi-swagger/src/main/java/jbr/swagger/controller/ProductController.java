@@ -28,33 +28,33 @@ public class ProductController {
   private ProductService productService;
 
   @ApiOperation("Get all available products")
-  @GetMapping("products")
+  @GetMapping("getAllProducts")
   public List<Product> getAllProducts() {
     return productService.getAllProducts();
   }
 
   @ApiOperation("Get a product by id")
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
-  @GetMapping("products/{id}")
+  @GetMapping("getProductById/{id}")
   public Product getProductById(@PathVariable String id) {
     return productService.getProductById(id);
   }
 
   @ApiOperation("Add a product")
-  @PostMapping("products")
+  @PostMapping("addProduct")
   public void addProduct(@RequestBody Product product) {
     productService.addProduct(product);
   }
 
   @ApiOperation("Update a product detail using id")
-  @PutMapping("products/{id}")
+  @PutMapping("updateProduct/{id}")
   public void updateProduct(@RequestBody Product product, @PathVariable String id) {
     productService.updateProduct(product, id);
   }
 
   @ApiOperation("Delete a product using id")
-  @DeleteMapping("products/{id}")
+  @DeleteMapping("deleteProduct/{id}")
   public void deleteProduct(@PathVariable String id) {
-    productService.delete(id);
+    productService.deleteProduct(id);
   }
 }
