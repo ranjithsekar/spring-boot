@@ -1,5 +1,6 @@
 package com.bootrest.model;
 
+import com.bootrest.common.CategoryName;
 import com.bootrest.common.SubCategoryName;
 
 import lombok.AllArgsConstructor;
@@ -10,6 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SubCategory {
-  private int id;
+  private int categoryId;
+  private CategoryName categoryName;
   private SubCategoryName name;
+  private String title;
+  private String desc;
+  private boolean active;
 }

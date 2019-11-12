@@ -12,4 +12,7 @@ import lombok.NoArgsConstructor;
 public class Category {
   private int id;
   private CategoryName name;
+  private String title;
+  private String description;
+  private boolean active;
 }
