@@ -1,0 +1,34 @@
+[
+  {
+    "product": {
+      "id": 5000,
+      "details": {
+        "name": "Crompton Fan 14 inch",
+        "description": "Crompton Fan description",
+        "price": 1700,
+        "discount_percent": 0,
+        "model_no": "FAN23AB22",
+        "model_name": "HOME14INCH",
+        "customer_rating": 4.2,
+        "image" : "/product/image/5000.jpg"
+      },
+      "category": {
+        "id": 100,
+        "name": "Home Appliances"
+      },
+      "subcategory": {
+        "id": 100,
+        "name": "Fan"
+      },
+      "manufacturer": {
+        "id": 100,
+        "name": "Crompton"
+      },
+      "seller": {
+        "id": 1000,
+        "name": "Sathya Agencies",
+        "address": "Chennai"
+      }
+    }
+  }
+]
