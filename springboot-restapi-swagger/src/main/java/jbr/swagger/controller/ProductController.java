@@ -46,6 +46,12 @@ public class ProductController {
     productService.addProduct(product);
   }
 
+  @ApiOperation("Add multiple products")
+  @PostMapping("addProducts")
+  public void addProducts(@RequestBody Product[] product) {
+    productService.addProducts(product);
+  }
+
   @ApiOperation("Update a product detail using id")
   @PutMapping("updateProduct/{id}")
   public void updateProduct(@RequestBody Product product, @PathVariable String id) {

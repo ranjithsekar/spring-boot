@@ -13,8 +13,8 @@ public class ProductService {
 
   List<Product> products = Stream
       .of(new Product("100", "Galaxy S8", "Mobile", "50000"), new Product("200", "Honda Shine", "Vehicle", "60000"),
-          new Product("300", "Dell Vostro", "Laptop", "75000"), new Product("400", "Usha", "Fan", "5000"), 
-          new Product("500", "Dell Inspiran", "Laptop", "6000"),new Product("600", "Lenovo Fix", "Laptop", "7000"))
+          new Product("300", "Dell Vostro", "Laptop", "75000"), new Product("400", "Usha", "Fan", "5000"),
+          new Product("500", "Dell Inspiran", "Laptop", "6000"), new Product("600", "Lenovo Fix", "Laptop", "7000"))
       .collect(Collectors.toList());
 
   public List<Product> getAllProducts() {
@@ -26,8 +26,15 @@ public class ProductService {
   }
 
   public void addProduct(Product product) {
-    System.out.println("product: "+ product.getId());
+    System.out.println("product: " + product.getId());
     products.add(product);
+  }
+
+  public void addProducts(Product[] product) {
+    for (Product prod : product) {
+      System.out.println("product: " + prod.getId());
+      products.add(prod);
+    }
   }
 
   public void updateProduct(Product product, String id) {
