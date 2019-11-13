@@ -42,7 +42,7 @@ public class ProductController {
 
   @ApiOperation("Add a product")
   @PostMapping("addProduct")
-  public void addProduct(@RequestBody Product product) {
+  public void addProduct(@RequestBody Product[] product) {
     productService.addProduct(product);
   }
 
