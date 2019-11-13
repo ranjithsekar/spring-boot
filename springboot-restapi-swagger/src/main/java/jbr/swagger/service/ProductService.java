@@ -25,9 +25,17 @@ public class ProductService {
     return products.stream().filter(e -> e.getId().equals(id)).findFirst().get();
   }
 
+<<<<<<< HEAD
   public void addProduct(Product product) {
     System.out.println("product: " + product.getId());
     products.add(product);
+=======
+  public void addProduct(Product[] product) {
+    for(Product prod: product) {
+    System.out.println("product: "+ prod.getId());
+    products.add(prod);
+    }
+>>>>>>> branch 'master' of https://github.com/ranjithsekar/spring-boot.git
   }
 
   public void addProducts(Product[] product) {
