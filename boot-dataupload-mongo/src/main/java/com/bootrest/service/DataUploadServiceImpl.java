@@ -28,7 +28,8 @@ public class DataUploadServiceImpl implements DataUploadService {
   public void addCategory(String fileName) throws Exception {
     Stream<String> lines = Files.lines(Paths.get(fileName));
     List<Category> categories = lines.map(categoryMap).collect(Collectors.toList());
-    categoryRepo.saveAll(categories);
+    categoryRepo.deleteAll();
+    categoryRepo.insert(categories);
     lines.close();
   }
 
@@ -36,7 +37,8 @@ public class DataUploadServiceImpl implements DataUploadService {
   public void addSubCategory(String fileName) throws Exception {
     Stream<String> lines = Files.lines(Paths.get(fileName));
     List<SubCategory> subCategories = lines.map(subCategoryMap).collect(Collectors.toList());
-    subCategoryRepo.saveAll(subCategories);
+    subCategoryRepo.deleteAll();
+    subCategoryRepo.insert(subCategories);
     lines.close();
   }
 

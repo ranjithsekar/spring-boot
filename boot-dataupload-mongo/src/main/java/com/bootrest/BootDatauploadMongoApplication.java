@@ -2,11 +2,11 @@ package com.bootrest;
 
 import java.io.IOException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.util.StringUtils;
 
 import com.bootrest.service.DataUploadService;
 
@@ -23,7 +23,7 @@ public class BootDatauploadMongoApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     String fileName = args[0];
-    if (!StringUtils.isEmpty(fileName)) {
+    if (StringUtils.isNotEmpty(fileName)) {
       if (fileName.contains("subcategory")) {
         service.addSubCategory(fileName);
       } else {
