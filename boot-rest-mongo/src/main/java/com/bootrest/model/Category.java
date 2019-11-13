@@ -1,16 +1,23 @@
 package com.bootrest.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.bootrest.common.CategoryName;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
+@Document(collection = "category")
 public class Category {
+  @Id
   private int id;
+  @Indexed(unique = true)
   private CategoryName name;
   private String title;
   private String description;

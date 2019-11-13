@@ -1,18 +1,21 @@
 package com.bootrest.model;
 
-import com.bootrest.common.CategoryName;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.bootrest.common.SubCategoryName;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
+@Document(collection = "subcategory")
 public class SubCategory {
   private int categoryId;
-  private CategoryName categoryName;
+  @Indexed(unique = true)
   private SubCategoryName name;
   private String title;
   private String desc;
