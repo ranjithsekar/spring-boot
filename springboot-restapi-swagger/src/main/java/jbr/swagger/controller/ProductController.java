@@ -42,14 +42,14 @@ public class ProductController {
 
   @ApiOperation("Add a product")
   @PostMapping("addProduct")
-  public void addProduct(@RequestBody Product[] product) {
+  public void addProduct(@RequestBody Product product) {
     productService.addProduct(product);
   }
 
   @ApiOperation("Add multiple products")
   @PostMapping("addProducts")
-  public void addProducts(@RequestBody Product[] product) {
-    productService.addProducts(product);
+  public void addProducts(@RequestBody Product[] products) {
+    productService.addProducts(products);
   }
 
   @ApiOperation("Update a product detail using id")
