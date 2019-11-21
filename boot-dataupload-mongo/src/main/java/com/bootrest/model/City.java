@@ -34,4 +34,7 @@ public class City {
 
   /** Longitude of the city. **/
   private String longitude;
+
+  /** City is active or inactive. **/
+  private boolean active;
 }

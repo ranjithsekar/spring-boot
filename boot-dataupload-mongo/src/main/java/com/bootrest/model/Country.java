@@ -25,4 +25,7 @@ public class Country {
 
   /** Country code. **/
   private String code;
+
+  /** Country is active or inactive. **/
+  private boolean active;
 }

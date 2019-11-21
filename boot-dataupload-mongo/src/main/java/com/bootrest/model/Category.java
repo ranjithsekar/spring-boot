@@ -22,7 +22,7 @@ public class Category {
 
   /** Category id. **/
   @Id
-  private int id;
+  private String id;
 
   /** Category name. **/
   @Indexed(unique = true)

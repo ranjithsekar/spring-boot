@@ -24,10 +24,10 @@ import com.bootrest.repository.SubCategoryRepository;
  * @since 2019-Nov-20
  */
 @Service
-public class SubCategoryUploadService {
+public class SubCategoryService {
 
   /** Logger object. */
-  private final Logger log = LoggerFactory.getLogger(SubCategoryUploadService.class);
+  private final Logger log = LoggerFactory.getLogger(SubCategoryService.class);
 
   /** Inject SubCategory Repository Object. **/
   @Autowired

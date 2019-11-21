@@ -10,11 +10,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.bootrest.service.CategoryUploadService;
-import com.bootrest.service.CityUploadService;
-import com.bootrest.service.CountryUploadService;
-import com.bootrest.service.StateUploadService;
-import com.bootrest.service.SubCategoryUploadService;
+import com.bootrest.service.CategoryService;
+import com.bootrest.service.CityService;
+import com.bootrest.service.CountryService;
+import com.bootrest.service.StateService;
+import com.bootrest.service.SubCategoryService;
 
 /**
  * Application to upload master service data includes uploading category,
@@ -27,25 +27,25 @@ import com.bootrest.service.SubCategoryUploadService;
 public class BootDatauploadMongoApplication implements CommandLineRunner {
   private final Logger log = LoggerFactory.getLogger(BootDatauploadMongoApplication.class);
 
-  /** Inject Category Upload Service object. **/
+  /** Inject Category Service object. **/
   @Autowired
-  private CategoryUploadService categoryService;
+  private CategoryService categoryService;
 
-  /** Inject SubCategory Upload Service object. **/
+  /** Inject SubCategory Service object. **/
   @Autowired
-  private SubCategoryUploadService subCategoryService;
+  private SubCategoryService subCategoryService;
 
-  /** Inject Country Upload Service object. **/
+  /** Inject Country Service object. **/
   @Autowired
-  private CountryUploadService countryService;
+  private CountryService countryService;
 
-  /** Inject State Upload Service object. **/
+  /** Inject State Service object. **/
   @Autowired
-  private StateUploadService stateService;
+  private StateService stateService;
 
-  /** Inject City Upload Service object. **/
+  /** Inject City Service object. **/
   @Autowired
-  private CityUploadService cityService;
+  private CityService cityService;
 
   /**
    * Main method for the application execution.

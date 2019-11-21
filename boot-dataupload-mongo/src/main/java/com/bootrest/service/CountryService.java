@@ -27,10 +27,10 @@ import com.bootrest.repository.StateRepository;
  * @since 2019-Nov-20
  */
 @Service
-public class CountryUploadService {
+public class CountryService {
 
   /** Logger object. */
-  private final Logger log = LoggerFactory.getLogger(CountryUploadService.class);
+  private final Logger log = LoggerFactory.getLogger(CountryService.class);
 
   /** Inject Country Repository Object. **/
   @Autowired

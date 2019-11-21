@@ -26,10 +26,10 @@ import com.bootrest.repository.SubCategoryRepository;
  * @since 2019-Nov-20
  */
 @Service
-public class CategoryUploadService {
+public class CategoryService {
 
   /** Logger object. */
-  private final Logger log = LoggerFactory.getLogger(CategoryUploadService.class);
+  private final Logger log = LoggerFactory.getLogger(CategoryService.class);
 
   /** Inject Category Repository Object. **/
   @Autowired
@@ -73,7 +73,7 @@ public class CategoryUploadService {
     String[] data = line.split(",");
 
     Category category = new Category();
-    category.setId(Integer.valueOf(data[0]));
+    category.setId(data[0]);
     category.setName(data[1]);
     category.setTitle(data[2]);
     category.setDescription(data[3]);

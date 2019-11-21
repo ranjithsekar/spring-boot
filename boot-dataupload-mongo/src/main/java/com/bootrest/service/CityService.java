@@ -13,27 +13,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bootrest.model.State;
+import com.bootrest.model.City;
 import com.bootrest.repository.CityRepository;
-import com.bootrest.repository.StateRepository;
 
 /**
- * Service to upload state of a state data. Upload the city data after this
- * service is called since 1) it will delete the city and state data, 2) upload
- * the state data.
+ * Service to upload city data. 1) delete the existing city data, 2) upload the
+ * new city data.
  * 
  * @author Ranjith Sekar
  * @since 2019-Nov-20
  */
 @Service
-public class StateUploadService {
+public class CityService {
 
   /** Logger object. */
-  private final Logger log = LoggerFactory.getLogger(StateUploadService.class);
-
-  /** Inject State Repository Object. **/
-  @Autowired
-  private StateRepository stateRepository;
+  private final Logger log = LoggerFactory.getLogger(CityService.class);
 
   /** Inject City Repository Object. **/
   @Autowired
@@ -45,21 +39,18 @@ public class StateUploadService {
    * 
    * @param fileName - input filename.
    */
-  public void addState(String fileName) {
+  public void addCity(String fileName) {
     Stream<String> lines;
 
     try {
       lines = Files.lines(Paths.get(fileName));
-      List<State> states = lines.map(stateMap).collect(Collectors.toList());
+      List<City> states = lines.map(cityMap).collect(Collectors.toList());
 
       cityRepository.deleteAll();
       log.info("All the existing city data deleted.");
 
-      stateRepository.deleteAll();
-      log.info("All the existing state data deleted.");
-
-      List<State> inserted = stateRepository.insert(states);
-      log.info(inserted.size() + " states inserted.");
+      List<City> inserted = cityRepository.insert(states);
+      log.info(inserted.size() + " cities inserted");
 
       lines.close();
     } catch (IOException e) {
@@ -68,17 +59,19 @@ public class StateUploadService {
   }
 
   /**
-   * Construct the State object from the csv.
+   * Construct the City object from the csv.
    */
-  private Function<String, State> stateMap = (line) -> {
+  private Function<String, City> cityMap = (line) -> {
     String[] data = line.split(",");
 
-    State state = new State();
-    state.setName(data[0]);
-    state.setCode(data[1]);
-    state.setCountryCode(data[2]);
+    City city = new City();
+    city.setName(data[0]);
+    city.setCountryCode(data[1]);
+    city.setStateCode(data[2]);
+    city.setLatitude(data[3]);
+    city.setLongitude(data[4]);
 
-    return state;
+    return city;
   };
 
 }
