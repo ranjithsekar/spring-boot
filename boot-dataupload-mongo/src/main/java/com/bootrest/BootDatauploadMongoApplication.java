@@ -3,8 +3,6 @@ package com.bootrest;
 import java.io.IOException;
 
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +14,8 @@ import com.bootrest.service.CountryService;
 import com.bootrest.service.StateService;
 import com.bootrest.service.SubCategoryService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Application to upload master service data includes uploading category,
  * subcategory, country, state and city data.
@@ -24,8 +24,8 @@ import com.bootrest.service.SubCategoryService;
  * @since 2019-Nov-20
  */
 @SpringBootApplication
+@Slf4j
 public class BootDatauploadMongoApplication implements CommandLineRunner {
-  private final Logger log = LoggerFactory.getLogger(BootDatauploadMongoApplication.class);
 
   /** Inject Category Service object. **/
   @Autowired

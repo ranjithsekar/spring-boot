@@ -8,8 +8,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +15,8 @@ import com.bootrest.model.Country;
 import com.bootrest.repository.CityRepository;
 import com.bootrest.repository.CountryRepository;
 import com.bootrest.repository.StateRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Service to upload country data. Upload the state and city data after this
@@ -27,10 +27,8 @@ import com.bootrest.repository.StateRepository;
  * @since 2019-Nov-20
  */
 @Service
+@Slf4j
 public class CountryService {
-
-  /** Logger object. */
-  private final Logger log = LoggerFactory.getLogger(CountryService.class);
 
   /** Inject Country Repository Object. **/
   @Autowired

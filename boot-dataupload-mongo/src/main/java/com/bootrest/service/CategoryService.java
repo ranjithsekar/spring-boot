@@ -8,14 +8,14 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootrest.model.Category;
 import com.bootrest.repository.CategoryRepository;
 import com.bootrest.repository.SubCategoryRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Service to upload the category data. Upload the subcategory data after
@@ -26,10 +26,8 @@ import com.bootrest.repository.SubCategoryRepository;
  * @since 2019-Nov-20
  */
 @Service
+@Slf4j
 public class CategoryService {
-
-  /** Logger object. */
-  private final Logger log = LoggerFactory.getLogger(CategoryService.class);
 
   /** Inject Category Repository Object. **/
   @Autowired

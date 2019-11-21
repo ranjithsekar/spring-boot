@@ -8,13 +8,13 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootrest.model.City;
 import com.bootrest.repository.CityRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Service to upload city data. 1) delete the existing city data, 2) upload the
@@ -24,10 +24,8 @@ import com.bootrest.repository.CityRepository;
  * @since 2019-Nov-20
  */
 @Service
+@Slf4j
 public class CityService {
-
-  /** Logger object. */
-  private final Logger log = LoggerFactory.getLogger(CityService.class);
 
   /** Inject City Repository Object. **/
   @Autowired
