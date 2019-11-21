@@ -1,5 +1,6 @@
 package com.bootrest.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,12 @@ public class CategoryServiceImpl implements CategoryService {
 
   @Override
   public Category addCategory(Category category) {
-    return categoryRepository.save(category);
+    return categoryRepository.insert(category);
   }
 
   @Override
-  public List<Category> addCategory(List<Category> categories) {
-    return categoryRepository.saveAll(categories);
+  public List<Category> addCategory(Category[] categories) {
+    return categoryRepository.insert(Arrays.asList(categories));
   }
 
   @Override

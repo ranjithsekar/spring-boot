@@ -8,7 +8,7 @@ public interface CategoryService {
 
   Category addCategory(Category category);
 
-  List<Category> addCategory(List<Category> categories);
+  List<Category> addCategory(Category[] categories);
 
   int removeCategory(Category category);
 
