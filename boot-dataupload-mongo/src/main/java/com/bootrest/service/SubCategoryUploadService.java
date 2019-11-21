@@ -13,32 +13,57 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bootrest.dao.SubCategoryRepository;
 import com.bootrest.model.SubCategory;
+import com.bootrest.repository.SubCategoryRepository;
 
+/**
+ * Service to upload sub category data. 1) delete the existing subcategory data,
+ * 2) upload the new subcategory data.
+ * 
+ * @author Ranjith Sekar
+ * @since 2019-Nov-20
+ */
 @Service
 public class SubCategoryUploadService {
+
+  /** Logger object. */
   private final Logger log = LoggerFactory.getLogger(SubCategoryUploadService.class);
 
+  /** Inject SubCategory Repository Object. **/
   @Autowired
-  SubCategoryRepository subCategoryRepo;
+  SubCategoryRepository subCategoryRepository;
 
+  /**
+   * 1) Read the file line by line, 2) parse the data, 3) remove existing data
+   * from db, 4) insert parsed data.
+   * 
+   * @param fileName - input filename.
+   */
   public void addSubCategory(String fileName) {
     Stream<String> lines;
+
     try {
       lines = Files.lines(Paths.get(fileName));
       List<SubCategory> subCategories = lines.map(subCategoryMap).collect(Collectors.toList());
-      subCategoryRepo.deleteAll();
-      List<SubCategory> inserted = subCategoryRepo.insert(subCategories);
+
+      subCategoryRepository.deleteAll();
+      log.info("All the existing city data deleted.");
+
+      List<SubCategory> inserted = subCategoryRepository.insert(subCategories);
       log.info(inserted.size() + " subcategories inserted.");
+
       lines.close();
     } catch (IOException e) {
       log.error(e.getMessage());
     }
   }
 
+  /**
+   * Construct the Subcategory object from the csv.
+   */
   private Function<String, SubCategory> subCategoryMap = (line) -> {
     String[] data = line.split(",");
+
     SubCategory subCategory = new SubCategory();
     subCategory.setCategoryId(Integer.valueOf(data[0]));
     subCategory.setName(data[1]);

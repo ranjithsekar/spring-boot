@@ -13,42 +13,74 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bootrest.dao.CityRepository;
-import com.bootrest.dao.CountryRepository;
-import com.bootrest.dao.StateRepository;
 import com.bootrest.model.Country;
+import com.bootrest.repository.CityRepository;
+import com.bootrest.repository.CountryRepository;
+import com.bootrest.repository.StateRepository;
 
+/**
+ * Service to upload country data. Upload the state and city data after this
+ * service called since 1) it deletes city, state and country data, 2) upload
+ * the country data.
+ * 
+ * @author Ranjith Sekar
+ * @since 2019-Nov-20
+ */
 @Service
 public class CountryUploadService {
+
+  /** Logger object. */
   private final Logger log = LoggerFactory.getLogger(CountryUploadService.class);
 
+  /** Inject Country Repository Object. **/
   @Autowired
-  private CountryRepository countryRepo;
+  private CountryRepository countryRepository;
 
+  /** Inject State Repository Object. **/
   @Autowired
-  private StateRepository stateRepo;
+  private StateRepository stateRepository;
 
+  /** Inject City Repository Object. **/
   @Autowired
-  private CityRepository cityRepo;
+  private CityRepository cityRepository;
 
+  /**
+   * 1) Read the file line by line, 2) parse the data, 3) remove existing data
+   * from db, 4) insert parsed data.
+   * 
+   * @param fileName - input filename.
+   */
   public void addCountry(String fileName) {
     Stream<String> lines;
+
     try {
       lines = Files.lines(Paths.get(fileName));
       List<Country> countries = lines.map(countryMap).collect(Collectors.toList());
-      cityRepo.deleteAll();
-      stateRepo.deleteAll();
-      countryRepo.deleteAll();
-      List<Country> inserted = countryRepo.insert(countries);
+
+      cityRepository.deleteAll();
+      log.info("All the existing city data deleted.");
+
+      stateRepository.deleteAll();
+      log.info("All the existing state data deleted.");
+
+      countryRepository.deleteAll();
+      log.info("All the existing country data deleted.");
+
+      List<Country> inserted = countryRepository.insert(countries);
       log.info(inserted.size() + " countries inserted.");
+
       lines.close();
     } catch (IOException e) {
       log.error(e.getMessage());
     }
   }
 
+  /**
+   * Construct the Country object from the csv.
+   */
   private Function<String, Country> countryMap = (line) -> {
     String[] data = line.split(",");
+
     Country country = new Country();
     country.setName(data[0]);
     country.setCode(data[1]);

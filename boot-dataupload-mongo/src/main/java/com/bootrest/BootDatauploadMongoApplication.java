@@ -16,29 +16,50 @@ import com.bootrest.service.CountryUploadService;
 import com.bootrest.service.StateUploadService;
 import com.bootrest.service.SubCategoryUploadService;
 
+/**
+ * Application to upload master service data includes uploading category,
+ * subcategory, country, state and city data.
+ * 
+ * @author Ranjith Sekar
+ * @since 2019-Nov-20
+ */
 @SpringBootApplication
 public class BootDatauploadMongoApplication implements CommandLineRunner {
   private final Logger log = LoggerFactory.getLogger(BootDatauploadMongoApplication.class);
 
+  /** Inject Category Upload Service object. **/
   @Autowired
   private CategoryUploadService categoryService;
 
+  /** Inject SubCategory Upload Service object. **/
   @Autowired
   private SubCategoryUploadService subCategoryService;
 
+  /** Inject Country Upload Service object. **/
   @Autowired
   private CountryUploadService countryService;
 
+  /** Inject State Upload Service object. **/
   @Autowired
   private StateUploadService stateService;
 
+  /** Inject City Upload Service object. **/
   @Autowired
   private CityUploadService cityService;
 
+  /**
+   * Main method for the application execution.
+   * 
+   * @param args
+   * @throws IOException
+   */
   public static void main(String[] args) throws IOException {
     SpringApplication.run(BootDatauploadMongoApplication.class, args);
   }
 
+  /**
+   * Read the command line argument and pick the right service.
+   */
   @Override
   public void run(String... args) throws Exception {
     String fileName = args[0];
