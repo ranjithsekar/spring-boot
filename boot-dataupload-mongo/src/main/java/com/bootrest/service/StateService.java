@@ -72,9 +72,10 @@ public class StateService {
     String[] data = line.split(",");
 
     State state = new State();
-    state.setName(data[0]);
-    state.setCode(data[1]);
+    state.setStateCode(data[0]);
+    state.setStateName(data[1]);
     state.setCountryCode(data[2]);
+    state.setActive(Boolean.valueOf(data[3]));
 
     return state;
   };

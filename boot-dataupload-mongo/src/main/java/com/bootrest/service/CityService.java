@@ -63,11 +63,13 @@ public class CityService {
     String[] data = line.split(",");
 
     City city = new City();
-    city.setName(data[0]);
-    city.setCountryCode(data[1]);
-    city.setStateCode(data[2]);
-    city.setLatitude(data[3]);
-    city.setLongitude(data[4]);
+    city.setCountryCode(data[0]);
+    city.setStateCode(data[1]);
+    city.setCityCode(data[2]);
+    city.setCityName(data[3]);
+    city.setLatitude(data[4]);
+    city.setLongitude(data[5]);
+    city.setActive(Boolean.valueOf(data[6]));
 
     return city;
   };

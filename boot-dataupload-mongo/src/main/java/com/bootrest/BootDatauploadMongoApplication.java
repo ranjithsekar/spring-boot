@@ -62,7 +62,7 @@ public class BootDatauploadMongoApplication implements CommandLineRunner {
    */
   @Override
   public void run(String... args) throws Exception {
-    String fileName = args[0];
+    String fileName = "input/city.csv";
     if (StringUtils.isNotEmpty(fileName)) {
       log.info("Input file: " + fileName);
       if (fileName.contains("country")) {

@@ -1,3 +1,10 @@
-1,Electronic,Electronic Title,Electronic Desc,TRUE
-2,Electrical,Electrical Title,Electrical desc,TRUE
-3,Appliance,Appliance Title,Appliance desc,FALSE
+Ang01,Kitchen Items,Kitchen items for family & hotels,"All kitchen items for family, hotel and others",TRUE
+Ang02,Toys,Toys for children,All kind of toys,TRUE
+Ang03,Clothes,Cloths for Men & Women,All kind of cloths for men and women,TRUE
+Ang04,Photography,"Photography for wedding","All varieties of photography for wedding",TRUE
+Ang05,Catreing,Catering for Veg and Non-Veg,Veg and non-veg catering services,TRUE
+Ang06,Food,Food and beaverages,All food and beverage items,TRUE
+Ang07,Customized Cake,"Customized cake for your parties",All kind of cakes for parties and othe celebrations,TRUE
+Ang08,Mechanic,Mechics for personal and heavy vehicles,All kind of repair services for personal and industrial vehicles,TRUE
+Ang09,Elevators,Elevators services,All elevator services,TRUE
+Ang10,Constructions,Construction of home and commercial building,"Construction services for personal home, commercial building and other contracts",TRUE

@@ -34,6 +34,7 @@ public class CategoryService {
   private CategoryRepository categoryRepository;
 
   /** Inject SubCategory Repository Object. **/
+  @Autowired
   private SubCategoryRepository subCategoryRepository;
 
   /**
@@ -71,9 +72,9 @@ public class CategoryService {
     String[] data = line.split(",");
 
     Category category = new Category();
-    category.setId(data[0]);
-    category.setName(data[1]);
-    category.setTitle(data[2]);
+    category.setCategoryId(data[0]);
+    category.setCategoryName(data[1]);
+    category.setCategoryTitle(data[2]);
     category.setDescription(data[3]);
     category.setActive(Boolean.valueOf(data[4]));
 

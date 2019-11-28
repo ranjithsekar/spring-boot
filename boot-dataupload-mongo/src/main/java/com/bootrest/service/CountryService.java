@@ -80,8 +80,9 @@ public class CountryService {
     String[] data = line.split(",");
 
     Country country = new Country();
-    country.setName(data[0]);
-    country.setCode(data[1]);
+    country.setCountryCode(data[0]);
+    country.setCountryName(data[1]);
+    country.setActive(Boolean.valueOf(data[2]));
 
     return country;
   };

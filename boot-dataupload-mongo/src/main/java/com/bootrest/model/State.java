@@ -1,10 +1,12 @@
 package com.bootrest.model;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -13,22 +15,24 @@ import lombok.Setter;
  * @author Ranjith Sekar
  * @since 2019-Nov-20
  */
-@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Document(collection = "state")
 @Getter
 @Setter
-@Document(collection = "state")
-public class State {
-
-  /** State name. **/
-  @Id
-  private String name;
+@NoArgsConstructor
+public class State extends BaseEntity {
+  private static final long serialVersionUID = 1L;
 
   /** State code. **/
-  private String code;
+  private String stateCode;
+
+  /** State name. **/
+  @TextIndexed
+  private String stateName;
 
   /** Country code of the state. **/
   private String countryCode;
-  
+
   /** State is active or inactive. **/
   private boolean active;
 }

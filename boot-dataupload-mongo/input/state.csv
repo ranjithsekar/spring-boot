@@ -1,36 +1,36 @@
-Andhra Pradesh,AP,IND,TRUE
-Arunachal Pradesh,AR,IND,TRUE
-Assam,AS,IND,TRUE
-Bihar,BR,IND,TRUE
-Goa,GA,IND,TRUE
-Gujarat,GJ,IND,TRUE
-Haryana,HR,IND,TRUE
-Himachal Pradesh,HP,IND,TRUE
-Jharkhand,JH,IND,TRUE
-Karnataka,KA,IND,TRUE
-Kerala,KL,IND,TRUE
-Madhya Pradesh,MP,IND,TRUE
-Maharashtra,MH,IND,TRUE
-Manipur,MN,IND,TRUE
-Meghalaya,ML,IND,TRUE
-Mizoram,MZ,IND,TRUE
-Nagaland,NL,IND,TRUE
-Odisha,OD,IND,TRUE
-Punjab,PB,IND,TRUE
-Rajasthan,RJ,IND,TRUE
-Sikkim,SK,IND,TRUE
-Tamil Nadu,TN,IND,TRUE
-Telangana,TS,IND,TRUE
-Tripura,TR,IND,TRUE
-Uttar Pradesh,UP,IND,TRUE
-Uttarakhand,UK,IND,TRUE
-West Bengal,WB,IND,TRUE
-Andaman and Nicobar Islands,AN,IND,TRUE
-Chandigarh,CH,IND,TRUE
-Dadra and Nagar Haveli,DN,IND,TRUE
-Daman and Diu,DD,IND,TRUE
-Delhi,DL,IND,TRUE
-Jammu and Kashmir,JK,IND,TRUE
-Ladakh,LH,IND,TRUE
-Lakshadweep,LD,IND,TRUE
-Puducherry,PY,IND,TRUE
+AP,Andhra Pradesh,IND,TRUE
+AR,Arunachal Pradesh,IND,TRUE
+AS,Assam,IND,TRUE
+BR,Bihar,IND,TRUE
+GA,Goa,IND,TRUE
+GJ,Gujarat,IND,TRUE
+HR,Haryana,IND,TRUE
+HP,Himachal Pradesh,IND,TRUE
+JH,Jharkhand,IND,TRUE
+KA,Karnataka,IND,TRUE
+KL,Kerala,IND,TRUE
+MP,Madhya Pradesh,IND,TRUE
+MH,Maharashtra,IND,TRUE
+MN,Manipur,IND,TRUE
+ML,Meghalaya,IND,TRUE
+MZ,Mizoram,IND,TRUE
+NL,Nagaland,IND,TRUE
+OD,Odisha,IND,TRUE
+PB,Punjab,IND,TRUE
+RJ,Rajasthan,IND,TRUE
+SK,Sikkim,IND,TRUE
+TN,Tamil Nadu,IND,TRUE
+TS,Telangana,IND,TRUE
+TR,Tripura,IND,TRUE
+UP,Uttar Pradesh,IND,TRUE
+UK,Uttarakhand,IND,TRUE
+WB,West Bengal,IND,TRUE
+AN,Andaman and Nicobar Islands,IND,TRUE
+CH,Chandigarh,IND,TRUE
+DN,Dadra and Nagar Haveli,IND,TRUE
+DD,Daman and Diu,IND,TRUE
+DL,Delhi,IND,TRUE
+JK,Jammu and Kashmir,IND,TRUE
+LH,Ladakh,IND,TRUE
+LD,Lakshadweep,IND,TRUE
+PY,Puducherry,IND,TRUE

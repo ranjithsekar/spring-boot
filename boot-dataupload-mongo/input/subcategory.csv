@@ -1,5 +1,20 @@
-1,MOBILE,Redmi mobile title,Redmi mobile desc,TRUE
-1,MOBILE,Realme mobile title,Realme mobile desc,TRUE
-2,TELEVISION,LG 32inch title,LG 32inch desc,FALSE
-2,FAN,Usha Fan title,Usha Fan desc,TRUE
-3,WASHING MACHINE,LG Fast washing machine title,LG Fast washing machine desc,TRUE
+Ang01,AngSC01,Steel,Steel Items,Steel items for home kitchen,TRUE
+Ang01,AngSC02,"Kitchen Accessories",Accessories,All kitchen accessories,TRUE
+Ang02,AngSC03,Wood,Wooden toys,"All wooden toys",TRUE
+Ang02,AngSC04,Plastic,Plastic toys,All plastic toys,TRUE
+Ang03,AngSC05,Men Cloths,All men cloths,"All type of clothis for kids and men",TRUE
+Ang03,AngSC06,Women Cloths,All women cloths,All type of clothis for kids and women,TRUE
+Ang04,AngSC07,"Wedding",Wedding photography,All type of wedding photography,TRUE
+Ang04,AngSC08,Birthday,Birthday photography,All type of birthday photography,TRUE
+Ang05,AngSC09,Homemade Food,Home made food items,Home made food item services,TRUE
+Ang05,AngSC10,Homemad Chocolates,Home made chocolate items,Home made food item services,TRUE
+Ang06,AngSC11,Veg,Veg foods,All type of veg foods,TRUE
+Ang06,AngSC12,Non-Veg,"Non-Veg food",All non-veg foods,TRUE
+Ang07,AngSC13,Customized Party Cake,Customized party cakes,All customized party cakes,TRUE
+Ang07,AngSC14,Customized Birthday Cake,Customized birthday cakes,All customized birthday cakes for all ages,TRUE
+Ang08,AngSC15,Bike,Bike mechanical service,All bike services,TRUE
+Ang08,AngSC16,Car,Car mechanical service,"All car services",TRUE
+Ang09,AngSC17,Elevator1,Elevator 1 title,Elevator 1 description,FALSE
+Ang09,AngSC18,Elevator 2,Elevator 2 title,Elevator 2 description,FALSE
+Ang10,AngSC19,"Home Construction",All home construction,All different type of home construction services,TRUE
+Ang10,AngSC20,Commercial Construction,All commercial construction,All types of commercial construction services,TRUE

@@ -13,7 +13,7 @@ management:
 
 spring:  application:    name: masterdataservice  data:    mongodb:      host: localhost
       port: 27017
-      database: angadi
+      database: masterdata
     
 logging:
     level:

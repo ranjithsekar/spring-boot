@@ -29,7 +29,7 @@ public class SubCategoryService {
 
   /** Inject SubCategory Repository Object. **/
   @Autowired
-  SubCategoryRepository subCategoryRepository;
+  private SubCategoryRepository subCategoryRepository;
 
   /**
    * 1) Read the file line by line, 2) parse the data, 3) remove existing data
@@ -45,7 +45,7 @@ public class SubCategoryService {
       List<SubCategory> subCategories = lines.map(subCategoryMap).collect(Collectors.toList());
 
       subCategoryRepository.deleteAll();
-      log.info("All the existing city data deleted.");
+      log.info("All the existing subcategory data deleted.");
 
       List<SubCategory> inserted = subCategoryRepository.insert(subCategories);
       log.info(inserted.size() + " subcategories inserted.");
@@ -63,11 +63,12 @@ public class SubCategoryService {
     String[] data = line.split(",");
 
     SubCategory subCategory = new SubCategory();
-    subCategory.setCategoryId(Integer.valueOf(data[0]));
-    subCategory.setName(data[1]);
-    subCategory.setTitle(data[2]);
-    subCategory.setDesc(data[3]);
-    subCategory.setActive(Boolean.valueOf(data[4]));
+    subCategory.setCategoryId(data[0]);
+    subCategory.setSubCategoryId(data[1]);
+    subCategory.setSubCategoryName(data[2]);
+    subCategory.setSubCategoryTitle(data[3]);
+    subCategory.setDescription(data[4]);
+    subCategory.setActive(Boolean.valueOf(data[5]));
 
     return subCategory;
   };
