@@ -1,0 +1,37 @@
+[
+	{
+		"customerId": "1000",
+		"customerName": "Ranjith",
+		"favoriteCategories": [
+			"Toys",
+			"Sports",
+			"Cloths"
+		]
+	},
+	{
+		"customerId": "2000",
+		"customerName": "Sekar",
+		"favoriteCategories": [
+			"Toys",
+			"Catering",
+			"Food"
+		]
+	},
+	{
+		"customerId": "3000",
+		"customerName": "Anbu",
+		"favoriteCategories": [
+			"Toys",
+			"Food",
+			"Cloths"
+		]
+	},
+  {
+    "customerId": "4000",
+    "customerName": "Balu",
+    "favoriteCategories": [
+      "Toys",
+      "Cloths"
+    ]
+  }
+]
