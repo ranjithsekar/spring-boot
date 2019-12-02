@@ -12,6 +12,6 @@ import com.bootrest.model.SubCategory;
  * @since 2019-Nov-20
  */
 @Repository
-public interface SubCategoryRepository extends MongoRepository<SubCategory, String> {
+public interface SubCategoryDao extends MongoRepository<SubCategory, String> {
 
 }

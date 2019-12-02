@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootrest.model.User;
-import com.bootrest.repository.UserRepository;
+import com.bootrest.repository.UserDao;
 import com.bootrest.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
   /** Inject User Repository Object. **/
   @Autowired
-  private UserRepository userRepository;
+  private UserDao userRepository;
 
   /**
    * 1) Read the file line by line, 2) parse the data, 3) remove existing data

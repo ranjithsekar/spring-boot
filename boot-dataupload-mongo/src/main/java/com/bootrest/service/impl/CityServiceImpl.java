@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootrest.model.City;
-import com.bootrest.repository.CityRepository;
+import com.bootrest.repository.CityDao;
 import com.bootrest.service.CityService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ public class CityServiceImpl implements CityService {
 
   /** Inject City Repository Object. **/
   @Autowired
-  private CityRepository cityRepository;
+  private CityDao cityRepository;
 
   /**
    * 1) Read the file line by line, 2) parse the data, 3) remove existing data

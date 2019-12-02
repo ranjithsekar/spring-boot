@@ -12,6 +12,6 @@ import com.bootrest.model.City;
  * @since 2019-Nov-20
  */
 @Repository
-public interface CityRepository extends MongoRepository<City, String> {
+public interface CityDao extends MongoRepository<City, String> {
 
 }

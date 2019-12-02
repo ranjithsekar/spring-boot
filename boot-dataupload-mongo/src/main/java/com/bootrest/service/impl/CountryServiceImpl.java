@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootrest.model.Country;
-import com.bootrest.repository.CityRepository;
-import com.bootrest.repository.CountryRepository;
-import com.bootrest.repository.StateRepository;
+import com.bootrest.repository.CityDao;
+import com.bootrest.repository.CountryDao;
+import com.bootrest.repository.StateDao;
 import com.bootrest.service.CountryService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -33,15 +33,15 @@ public class CountryServiceImpl implements CountryService {
 
   /** Inject Country Repository Object. **/
   @Autowired
-  private CountryRepository countryRepository;
+  private CountryDao countryRepository;
 
   /** Inject State Repository Object. **/
   @Autowired
-  private StateRepository stateRepository;
+  private StateDao stateRepository;
 
   /** Inject City Repository Object. **/
   @Autowired
-  private CityRepository cityRepository;
+  private CityDao cityRepository;
 
   /**
    * 1) Read the file line by line, 2) parse the data, 3) remove existing data

@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootrest.model.SubCategory;
-import com.bootrest.repository.SubCategoryRepository;
+import com.bootrest.repository.SubCategoryDao;
 import com.bootrest.service.SubCategoryService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ public class SubCategoryServiceImpl implements SubCategoryService {
 
   /** Inject SubCategory Repository Object. **/
   @Autowired
-  private SubCategoryRepository subCategoryRepository;
+  private SubCategoryDao subCategoryRepository;
 
   /**
    * 1) Read the file line by line, 2) parse the data, 3) remove existing data

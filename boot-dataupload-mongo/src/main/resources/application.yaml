@@ -1,6 +1,6 @@
 server:
   port: 8080
-  servlet:    context-path: /masterdataservice
+  #servlet:  #  context-path: /masterdataservice
   error:
     whitelabel:      enabled: false
       
@@ -12,14 +12,14 @@ management:
       path-mapping:
            health: health
 
-spring:  application:    name: masterdataservice  data:    mongodb:      host: localhost
+spring:  application:    name: masterservice  data:    mongodb:      host: localhost
       port: 27017
-      database: masterdata
+      database: masterdatadb
     
 logging:
     level:
       root: info     
-      com.angadi.vendor:  INFO
+      com.bootrest:  INFO
     pattern:
      file:    "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
     file: /logs/masterdataservice.log

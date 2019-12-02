@@ -2,6 +2,9 @@
 	{
 		"customerId": "1000",
 		"customerName": "Ranjith",
+		"email": "ranjith@gmail.com",
+		"address": "ranjith address",
+		"mobile": "1111111111",
 		"favoriteCategories": [
 			"Toys",
 			"Sports",
@@ -11,6 +14,9 @@
 	{
 		"customerId": "2000",
 		"customerName": "Sekar",
+		"email": "sekar@gmail.com",
+		"address": "sekar address",
+		"mobile": "22222222",
 		"favoriteCategories": [
 			"Toys",
 			"Catering",
@@ -20,18 +26,24 @@
 	{
 		"customerId": "3000",
 		"customerName": "Anbu",
+		"email": "anbu@gmail.com",
+		"address": "anbu address",
+		"mobile": "33333333",
 		"favoriteCategories": [
 			"Toys",
 			"Food",
 			"Cloths"
 		]
 	},
-  {
-    "customerId": "4000",
-    "customerName": "Balu",
-    "favoriteCategories": [
-      "Toys",
-      "Cloths"
-    ]
-  }
+	{
+		"customerId": "4000",
+		"customerName": "Balu",
+		"email": "balu@gmail.com",
+		"address": "balu address",
+		"mobile": "4444444",
+		"favoriteCategories": [
+			"Toys",
+			"Cloths"
+		]
+	}
 ]

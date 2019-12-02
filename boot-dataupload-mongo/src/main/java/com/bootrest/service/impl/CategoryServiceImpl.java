@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootrest.model.Category;
-import com.bootrest.repository.CategoryRepository;
-import com.bootrest.repository.SubCategoryRepository;
+import com.bootrest.repository.CategoryDao;
+import com.bootrest.repository.SubCategoryDao;
 import com.bootrest.service.CategoryService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -32,11 +32,11 @@ public class CategoryServiceImpl implements CategoryService{
 
   /** Inject Category Repository Object. **/
   @Autowired
-  private CategoryRepository categoryRepository;
+  private CategoryDao categoryRepository;
 
   /** Inject SubCategory Repository Object. **/
   @Autowired
-  private SubCategoryRepository subCategoryRepository;
+  private SubCategoryDao subCategoryRepository;
 
   /**
    * 1) Read the file line by line, 2) parse the data, 3) remove existing data

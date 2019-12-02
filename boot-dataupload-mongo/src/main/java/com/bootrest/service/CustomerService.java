@@ -1,12 +1,12 @@
 package com.bootrest.service;
 
-import com.bootrest.model.Customer;
+import com.bootrest.model.dto.CustomerVO;
 
 public interface CustomerService {
 
-  Customer addCustomer(Customer customer);
+  void createCustomer(CustomerVO customer);
 
-  boolean deleteCustomer(String customerId);
+  void updateCustomer(CustomerVO customer);
 
-  Customer updateCustomer(Customer customer);
+  void deleteCustomer(String customerId);
 }

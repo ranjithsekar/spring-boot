@@ -3,14 +3,16 @@ package com.bootrest.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bootrest.model.Customer;
+import com.bootrest.model.State;
+
 /**
- * User Mongo Repository.
+ * State Mongo Repository.
  * 
  * @author Ranjith Sekar
- * @since 2019-Nov-28
+ * @since 2019-Nov-20
  */
 @Repository
-public interface CustomerRepository extends MongoRepository<Customer, String> {
+public interface StateDao extends MongoRepository<State, String>{
 
 }
+
