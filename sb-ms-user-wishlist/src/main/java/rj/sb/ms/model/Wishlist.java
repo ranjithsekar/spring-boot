@@ -10,7 +10,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Wishlist {
-	private String productid;
-	private String productname;
-	private String rating;
+  private String productid;
+  private String productname;
+  private String productPrice;
+  private String productRating;
 }

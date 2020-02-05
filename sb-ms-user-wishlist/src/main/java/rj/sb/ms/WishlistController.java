@@ -40,7 +40,7 @@ public class WishlistController {
             Rating rating = restTemplate.getForObject("http://localhost:7070/product/rating/" + prod.getId(),
                 Rating.class);
 
-            return new Wishlist(prod.getId(), product.getName(), rating.getRating());
+            return new Wishlist(prod.getId(), product.getName(), product.getPrice(), rating.getRating());
           })
         .collect(Collectors.toList());
   }
@@ -60,8 +60,8 @@ public class WishlistController {
 
   // @RequestMapping("/{userid}")
   public List<Wishlist> getUserWishlistUsingWebClient(@PathVariable("userid") String userid) {
-    List<Wishlist> wishlists = Arrays.asList(new Wishlist("100", "", ""), new Wishlist("200", "", ""),
-        new Wishlist("300", "", ""));
+    List<Wishlist> wishlists = Arrays.asList(new Wishlist("100", "", "", ""), new Wishlist("200", "", "", ""),
+        new Wishlist("300", "", "", ""));
 
     return wishlists.stream()
         .map(prod ->
@@ -80,7 +80,7 @@ public class WishlistController {
                 .bodyToMono(Rating.class)
                 .block();
 
-            return new Wishlist(prod.getProductid(), product.getName(), rating.getRating());
+            return new Wishlist(prod.getProductid(), product.getName(), product.getPrice(), rating.getRating());
           })
         .collect(Collectors.toList());
 
