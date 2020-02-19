@@ -1,0 +1,14 @@
+server:
+  port: 6060
+  
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+app:
+  week:
+    days: Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+  welcome:
+    message: Hello Springboot application.properties
