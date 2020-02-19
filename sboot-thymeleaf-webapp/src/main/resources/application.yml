@@ -1,0 +1,12 @@
+server:
+  port: 6060
+  
+
+#Custom Properties
+home:
+  page:
+    title: Custom Home Page
+    message: Welcome to SpringBoot with Thymeleaf Tutorial
+    name: Ranjith
+header.name: Table Header
+week.days: Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday

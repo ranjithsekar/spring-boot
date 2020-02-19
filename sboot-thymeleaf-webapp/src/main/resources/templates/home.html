@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<link href="/css/main.css" rel="stylesheet">
+<title th:text="${homePageTitle}"></title>
+</head>
+
+<body>
+  <h2 class="home-message" th:text="${welcomeMessage}"></h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th th:text="${headerName}"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="day: ${weekDays}">
+        <td th:text="${day}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
