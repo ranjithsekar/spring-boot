@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.Product;
 import jbr.swagger.service.ProductServiceImpl;
 
@@ -28,7 +31,7 @@ public class ProductController {
 
   @Autowired
   private ProductServiceImpl productService;
-  
+
   @GetMapping("/hello")
   public String hello() {
     return "Hello. Welcome!!!";
@@ -44,7 +47,12 @@ public class ProductController {
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
   @GetMapping("getProductById/{id}")
   public Optional<Product> getProductById(@PathVariable String id) {
-    return productService.getProductById(id);
+    try {
+      return productService.getProductById(id);
+    } catch (ProductNotFoundException e) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+    }
+
   }
 
   @ApiOperation("Add a product")
@@ -62,7 +70,11 @@ public class ProductController {
   @ApiOperation("Update a product detail using id")
   @PutMapping("updateProduct/{id}")
   public void updateProduct(@RequestBody Product product, @PathVariable String id) {
-    productService.updateProduct(product);
+    try {
+      productService.updateProduct(id, product);
+    } catch (Exception e) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
   }
 
   @ApiOperation("Delete a product using id")

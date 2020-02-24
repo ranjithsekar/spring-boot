@@ -3,6 +3,7 @@ package jbr.swagger.service;
 import java.util.List;
 import java.util.Optional;
 
+import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.Product;
 
 public interface ProductService {
@@ -13,9 +14,9 @@ public interface ProductService {
 
   List<Product> getAllProducts();
 
-  Optional<Product> getProductById(String id);
+  Optional<Product> getProductById(String id) throws ProductNotFoundException;
 
-  Product updateProduct(Product product);
+  Product updateProduct(String id, Product product) throws ProductNotFoundException;
 
   void deleteProduct(String id);
 }
