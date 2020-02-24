@@ -1,8 +1,19 @@
-## **Concepts Used/Covered**
+### TOOLS & TECHNOLOGIES
+  1. Eclipse/STS
+  2. SpringBoot
+  3. H2DB
+  4. REST API
+  5. Swagger
 
-1. Spring Boot
-2. REST API
-3. Swagger
+### CONCEPTS/TOPICS COVERED
+  1. CRUD Operations using JPA
+  2. Swagger Implementation for RESTful API
+
+### HOW TO RUN?
+http://localhost:6060/restapi-swagger/hello
+
+### H2 DB Console
+http://localhost:6060/restapi-swagger/h2-console
 
 ### **Get response as json**
 * http://localhost:6060/restapi-swagger/v2/api-docs 

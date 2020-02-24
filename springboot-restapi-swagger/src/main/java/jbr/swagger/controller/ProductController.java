@@ -1,6 +1,8 @@
 package jbr.swagger.controller;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,7 +19,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import jbr.swagger.model.Product;
-import jbr.swagger.service.ProductService;
+import jbr.swagger.service.ProductServiceImpl;
 
 @RestController
 @Api(value = "Product API Doc", description = "Get Product APIs")
@@ -25,7 +27,12 @@ import jbr.swagger.service.ProductService;
 public class ProductController {
 
   @Autowired
-  private ProductService productService;
+  private ProductServiceImpl productService;
+  
+  @GetMapping("/hello")
+  public String hello() {
+    return "Hello. Welcome!!!";
+  }
 
   @ApiOperation("Get all available products")
   @GetMapping("getAllProducts")
@@ -36,7 +43,7 @@ public class ProductController {
   @ApiOperation("Get a product by id")
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
   @GetMapping("getProductById/{id}")
-  public Product getProductById(@PathVariable String id) {
+  public Optional<Product> getProductById(@PathVariable String id) {
     return productService.getProductById(id);
   }
 
@@ -48,14 +55,14 @@ public class ProductController {
 
   @ApiOperation("Add multiple products")
   @PostMapping("addProducts")
-  public void addProducts(@RequestBody Product[] products) {
-    productService.addProducts(products);
+  public List<Product> addProducts(@RequestBody Product[] products) {
+    return productService.addProducts(Arrays.asList(products));
   }
 
   @ApiOperation("Update a product detail using id")
   @PutMapping("updateProduct/{id}")
   public void updateProduct(@RequestBody Product product, @PathVariable String id) {
-    productService.updateProduct(product, id);
+    productService.updateProduct(product);
   }
 
   @ApiOperation("Delete a product using id")
