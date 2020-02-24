@@ -3,12 +3,13 @@ package jbr.swagger.service;
 import java.util.List;
 import java.util.Optional;
 
+import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.Product;
 
 public interface ProductService {
 
-  Product addProduct(Product newProduct);
+  Product addProduct(Product newProduct) throws ProductExistsException;
 
   List<Product> addProducts(List<Product> newProducts);
 

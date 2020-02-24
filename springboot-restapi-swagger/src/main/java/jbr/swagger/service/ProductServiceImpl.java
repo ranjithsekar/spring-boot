@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.Product;
 import jbr.swagger.repositories.ProductRepository;
@@ -20,8 +21,14 @@ public class ProductServiceImpl implements ProductService {
   ProductRepository productRepository;
 
   @Override
-  public Product addProduct(Product newProduct) {
+  public Product addProduct(Product newProduct) throws ProductExistsException {
     log.info("addProduct: " + newProduct.getId());
+    Optional<Product> product = productRepository.findById(newProduct.getId());
+
+    if (product.isPresent()) {
+      throw new ProductExistsException("Product already found!!");
+    }
+
     return productRepository.save(newProduct);
   }
 

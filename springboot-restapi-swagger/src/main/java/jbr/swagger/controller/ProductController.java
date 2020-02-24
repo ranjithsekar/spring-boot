@@ -4,8 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +19,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.Product;
 import jbr.swagger.service.ProductServiceImpl;
@@ -57,8 +63,19 @@ public class ProductController {
 
   @ApiOperation("Add a product")
   @PostMapping("addProduct")
-  public void addProduct(@RequestBody Product product) {
-    productService.addProduct(product);
+  public ResponseEntity<Void> addProduct(@Valid @RequestBody Product product, UriComponentsBuilder builder) {
+
+    try {
+      productService.addProduct(product);
+      HttpHeaders headers = new HttpHeaders();
+      headers.setLocation(builder.path("/addProduct")
+          .buildAndExpand(product.getId())
+          .toUri());
+      return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+    } catch (ProductExistsException ex) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+
   }
 
   @ApiOperation("Add multiple products")
