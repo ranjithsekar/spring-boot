@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import jbr.swagger.exception.ProductExistsException;
+import jbr.swagger.exception.ProductNameNotFoundException;
 import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.Product;
 import jbr.swagger.service.ProductServiceImpl;
@@ -58,7 +59,18 @@ public class ProductController {
     } catch (ProductNotFoundException e) {
       throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
     }
+  }
 
+  @ApiOperation("Get a product by name")
+  @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
+  @GetMapping("getProductByName/{name}")
+  public Product getProductByName(@PathVariable("name") String name) throws ProductNameNotFoundException {
+    Product product = productService.getProductByName(name);
+
+    if (null == product)
+      throw new ProductNameNotFoundException("Product name: '" + name + "' Not found in the product repository");
+
+    return product;
   }
 
   @ApiOperation("Add a product")
@@ -99,4 +111,5 @@ public class ProductController {
   public void deleteProduct(@PathVariable String id) {
     productService.deleteProduct(id);
   }
+
 }

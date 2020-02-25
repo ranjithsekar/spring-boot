@@ -74,4 +74,9 @@ public class ProductServiceImpl implements ProductService {
     log.info("deleteProduct: " + id);
     productRepository.deleteById(id);
   }
+
+  @Override
+  public Product getProductByName(String name) {
+    return productRepository.findProductByName(name);
+  }
 }

@@ -17,6 +17,8 @@ public interface ProductService {
 
   Optional<Product> getProductById(String id) throws ProductNotFoundException;
 
+  Product getProductByName(String name);
+
   Product updateProduct(String id, Product product) throws ProductNotFoundException;
 
   void deleteProduct(String id);

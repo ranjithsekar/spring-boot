@@ -26,3 +26,39 @@ copy the response and paste @ https://editor.swagger.io/
 ### **RESTApi Response**
 * http://localhost:6060/restapi-swagger/products
 * http://localhost:6060/restapi-swagger/products/100
+
+### TEST CUSTOM EXCEPTIONS
+#### CustomExceptionGlobalHandler.handleMethodArgumentNotValid(); - Choose POST method in POSTMAN
+``` json
+{
+  "id": "",
+  "name": "dddd S8",
+  "category": "Mobile",
+  "price": "7777"
+}
+```
+#### CustomExceptionGlobalHandler.handleHttpRequestMethodNotSupported(): - Choose PATCH method
+``` json
+{
+  "id": "222",
+  "name": "dddd S8",
+  "category": "Mobile",
+  "price": "7777"
+}
+```
+
+#### CustomExceptionGlobalHandler.handleProductNameNotFoundException(): - Choose GET
+http://localhost:6060/restapi-swagger/getProductByName/Usha
+
+
+### CLASSES/INTERFACES/ANNOTATIONS USED
+#### CLASSES
+1. ResponseEntityExceptionHandler
+ 
+#### INTERFACES
+1.
+
+#### ANNOTATIONS
+1. ControllerAdvice
+2. ExceptionHandler
+3. RestControllerAdvice
