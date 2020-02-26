@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +36,7 @@ import jbr.swagger.service.ProductServiceImpl;
 @RestController
 @Api(value = "Product API Doc", description = "Get Product APIs")
 @CrossOrigin(origins = "http://localhost:4200")
+@Validated
 public class ProductController {
 
   @Autowired
@@ -53,7 +56,7 @@ public class ProductController {
   @ApiOperation("Get a product by id")
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
   @GetMapping("getProductById/{id}")
-  public Optional<Product> getProductById(@PathVariable String id) {
+  public Optional<Product> getProductById(@Valid @PathVariable @Min(1) String id) {
     try {
       return productService.getProductById(id);
     } catch (ProductNotFoundException e) {

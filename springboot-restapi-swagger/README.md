@@ -47,6 +47,30 @@ copy the response and paste @ https://editor.swagger.io/
 }
 ```
 
+#### After adding 1) @Validated in Controller 2) @Min(1)
+http://localhost:6060/restapi-swagger/getProductById/0
+OUTPUT:
+javax.validation.ConstraintViolationException: getProductById.id: must be greater than or equal to 1
+
+```
+{
+    "timestamp": "2020-02-26T07:25:52.331+0000",
+    "status": 500,
+    "error": "Internal Server Error",
+    "message": "getProductById.id: must be greater than or equal to 1",
+    "path": "/restapi-swagger/getProductById/0"
+}
+```
+After handling the Excetion in Global handler (400 BadRequest)
+
+```
+{
+    "timestamp": "2020-02-26T07:31:20.620+0000",
+    "message": "getProductById.id: must be greater than or equal to 1",
+    "exceptionInfo": "uri=/restapi-swagger/getProductById/0"
+}
+```
+
 #### CustomExceptionGlobalHandler.handleProductNameNotFoundException(): - Choose GET
 http://localhost:6060/restapi-swagger/getProductByName/Usha
 

@@ -7,11 +7,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Custom Exception Details class.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomExceptionInfo {
+public class ExceptionInfo {
   private Date timestamp;
   private String message;
   private String exceptionInfo;
