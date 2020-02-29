@@ -1,0 +1,17 @@
+type Query{
+ 	getAllProducts: [Product]
+  	getProductById(id: ID!): Product
+}
+
+type Mutation {
+	addProduct(id: String, name: String, type: String, price: String): Product
+	deleteProduct(id: String): Boolean
+}
+
+type Product{
+  	id: String
+  	name: String
+  	type: String
+  	price: String
+}
+
