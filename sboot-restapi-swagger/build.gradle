@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.2.4.RELEASE'
 	id 'java'
+	id "jacoco"	
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -9,8 +10,15 @@ group = 'jbr.swagger'
 version = '0.1'
 sourceCompatibility = '1.8'
 
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
@@ -24,10 +32,47 @@ dependencies {
 	
 	runtime('com.h2database:h2')
 	
-	implementation 'org.projectlombok:lombok:1.18.12'
-	
+	// implementation 'org.projectlombok:lombok:1.18.12'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	//testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed" //, "standardOut", "standardError"
+    }
+    finalizedBy jacocoTestReport 
+}
+
+jacocoTestReport {
+    dependsOn test 
+    afterEvaluate {
+    	classDirectories.from = files(classDirectories.files.collect {
+        	fileTree(dir: it, exclude: [
+            	'**/model/**.class','**/dto/**.class'
+            ])
+        })
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.5"
+    reportsDir = file("$buildDir/jacoco")
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 1
+            }
+        }
+    }
 }

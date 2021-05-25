@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiResponses;
 import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNameNotFoundException;
 import jbr.swagger.exception.ProductNotFoundException;
-import jbr.swagger.model.Product;
+import jbr.swagger.model.ProductModel;
 import jbr.swagger.service.ProductServiceImpl;
 
 @RestController
@@ -48,15 +48,15 @@ public class ProductController {
   }
 
   @ApiOperation("Get all available products")
-  @GetMapping("getAllProducts")
-  public List<Product> getAllProducts() {
+  @GetMapping("products")
+  public List<ProductModel> getAllProducts() {
     return productService.getAllProducts();
   }
 
   @ApiOperation("Get a product by id")
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
-  @GetMapping("getProductById/{id}")
-  public Optional<Product> getProductById(@Valid @PathVariable @Min(1) String id) {
+  @GetMapping("product-by-id/{id}")
+  public Optional<ProductModel> getProductById(@Valid @PathVariable @Min(1) String id) {
     try {
       return productService.getProductById(id);
     } catch (ProductNotFoundException e) {
@@ -66,9 +66,9 @@ public class ProductController {
 
   @ApiOperation("Get a product by name")
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
-  @GetMapping("getProductByName/{name}")
-  public Product getProductByName(@PathVariable("name") String name) throws ProductNameNotFoundException {
-    Product product = productService.getProductByName(name);
+  @GetMapping("product-by-name/{name}")
+  public ProductModel getProductByName(@PathVariable("name") String name) throws ProductNameNotFoundException {
+    ProductModel product = productService.getProductByName(name);
 
     if (null == product)
       throw new ProductNameNotFoundException("Product name: '" + name + "' Not found in the product repository");
@@ -77,8 +77,8 @@ public class ProductController {
   }
 
   @ApiOperation("Add a product")
-  @PostMapping("addProduct")
-  public ResponseEntity<Void> addProduct(@Valid @RequestBody Product product, UriComponentsBuilder builder) {
+  @PostMapping("add-product")
+  public ResponseEntity<Void> addProduct(@Valid @RequestBody ProductModel product, UriComponentsBuilder builder) {
 
     try {
       productService.addProduct(product);
@@ -94,14 +94,14 @@ public class ProductController {
   }
 
   @ApiOperation("Add multiple products")
-  @PostMapping("addProducts")
-  public List<Product> addProducts(@RequestBody Product[] products) {
+  @PostMapping("add-products")
+  public List<ProductModel> addProducts(@RequestBody ProductModel[] products) {
     return productService.addProducts(Arrays.asList(products));
   }
 
   @ApiOperation("Update a product detail using id")
-  @PutMapping("updateProduct/{id}")
-  public void updateProduct(@RequestBody Product product, @PathVariable String id) {
+  @PutMapping("update-product/{id}")
+  public void updateProduct(@RequestBody ProductModel product, @PathVariable String id) {
     try {
       productService.updateProduct(id, product);
     } catch (Exception e) {
@@ -110,7 +110,7 @@ public class ProductController {
   }
 
   @ApiOperation("Delete a product using id")
-  @DeleteMapping("deleteProduct/{id}")
+  @DeleteMapping("delete-product/{id}")
   public void deleteProduct(@PathVariable String id) {
     productService.deleteProduct(id);
   }

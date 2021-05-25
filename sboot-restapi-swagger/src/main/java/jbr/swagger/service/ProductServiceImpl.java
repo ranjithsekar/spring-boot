@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jbr.swagger.dao.ProductDao;
 import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNotFoundException;
-import jbr.swagger.model.Product;
-import jbr.swagger.repositories.ProductRepository;
+import jbr.swagger.model.ProductModel;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -18,65 +18,48 @@ import lombok.extern.slf4j.Slf4j;
 public class ProductServiceImpl implements ProductService {
 
   @Autowired
-  ProductRepository productRepository;
+  ProductDao productDao;
 
   @Override
-  public Product addProduct(Product newProduct) throws ProductExistsException {
-    log.info("addProduct: " + newProduct.getId());
-    Optional<Product> product = productRepository.findById(newProduct.getId());
-
-    if (product.isPresent()) {
-      throw new ProductExistsException("Product already found!!");
-    }
-
-    return productRepository.save(newProduct);
+  public ProductModel addProduct(ProductModel newProduct) throws ProductExistsException {
+    log.info("addProduct: id" + newProduct.getId());
+    return productDao.addProduct(newProduct);
   }
 
   @Override
-  public List<Product> addProducts(List<Product> newProducts) {
+  public List<ProductModel> addProducts(List<ProductModel> newProducts) {
     log.info("addProducts: " + newProducts.stream()
         .map(e -> e.getId())
         .collect(Collectors.joining(",")));
-
-    return productRepository.saveAll(newProducts);
+    return productDao.addProducts(newProducts);
   }
 
   @Override
-  public List<Product> getAllProducts() {
+  public List<ProductModel> getAllProducts() {
     log.info("getAllProducts");
-    return productRepository.findAll();
+    return productDao.getAllProducts();
   }
 
   @Override
-  public Optional<Product> getProductById(String id) throws ProductNotFoundException {
+  public Optional<ProductModel> getProductById(String id) throws ProductNotFoundException {
     log.info("getProductById: " + id);
-    Optional<Product> product = productRepository.findById(id);
-
-    if (!product.isPresent()) {
-      throw new ProductNotFoundException("Product not found in the repository!!");
-    }
-    return productRepository.findById(id);
+    return productDao.getProductById(id);
   }
 
   @Override
-  public Product updateProduct(String id, Product product) throws ProductNotFoundException {
-    log.info("addProduct: " + product.getId());
-    Optional<Product> prod = productRepository.findById(id);
-
-    if (!prod.isPresent()) {
-      throw new ProductNotFoundException("Product not found in the repository to update!!");
-    }
-    return productRepository.save(product);
+  public ProductModel updateProduct(String id, ProductModel product) throws ProductNotFoundException {
+    return productDao.updateProduct(id, product);
   }
 
   @Override
   public void deleteProduct(String id) {
-    log.info("deleteProduct: " + id);
-    productRepository.deleteById(id);
+    log.info("deleteProduct: id" + id);
+    productDao.deleteProduct(id);
   }
 
   @Override
-  public Product getProductByName(String name) {
-    return productRepository.findProductByName(name);
+  public ProductModel getProductByName(String name) {
+    log.info("deleteProduct: name" + name);
+    return productDao.getProductByName(name);
   }
 }

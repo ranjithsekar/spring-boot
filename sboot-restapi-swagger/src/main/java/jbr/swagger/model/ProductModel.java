@@ -20,7 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Product {
+public class ProductModel {
 
   @ApiModelProperty(notes = "Product ID", example = "100", name = "prod id", dataType = "String")
   @Id

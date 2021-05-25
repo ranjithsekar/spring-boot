@@ -1,4 +1,4 @@
-package jbr.swagger.service;
+package jbr.swagger.dao;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,7 +7,7 @@ import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.ProductModel;
 
-public interface ProductService {
+public interface ProductDao {
 
   ProductModel addProduct(ProductModel newProduct) throws ProductExistsException;
 
@@ -22,4 +22,5 @@ public interface ProductService {
   ProductModel updateProduct(String id, ProductModel product) throws ProductNotFoundException;
 
   void deleteProduct(String id);
+
 }
