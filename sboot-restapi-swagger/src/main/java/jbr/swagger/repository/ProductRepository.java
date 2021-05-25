@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import jbr.swagger.model.ProductModel;
 
 @Repository
-public interface ProductRepository extends JpaRepository<ProductModel, String> {
+public interface ProductRepository extends JpaRepository<ProductModel, Long> {
 
   ProductModel findProductByName(String name);
 }

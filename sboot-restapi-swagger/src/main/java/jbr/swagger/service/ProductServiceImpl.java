@@ -22,14 +22,14 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public ProductModel addProduct(ProductModel newProduct) throws ProductExistsException {
-    log.info("addProduct: id" + newProduct.getId());
+    log.info("addProduct: id " + newProduct.getId());
     return productDao.addProduct(newProduct);
   }
 
   @Override
   public List<ProductModel> addProducts(List<ProductModel> newProducts) {
-    log.info("addProducts: " + newProducts.stream()
-        .map(e -> e.getId())
+    log.info("addProducts: ids: " + newProducts.stream()
+        .map(e -> String.valueOf(e.getId()))
         .collect(Collectors.joining(",")));
     return productDao.addProducts(newProducts);
   }

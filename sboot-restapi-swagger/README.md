@@ -4,6 +4,7 @@
   3. H2DB
   4. REST API
   5. Swagger
+  6. Jacoco
 
 ### CONCEPTS/TOPICS COVERED
   1. CRUD Operations using JPA

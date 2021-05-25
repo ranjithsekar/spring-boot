@@ -1,8 +1,9 @@
 package jbr.swagger.controller;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
@@ -27,11 +28,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import jbr.swagger.dto.ProductDto;
 import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNameNotFoundException;
 import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.ProductModel;
 import jbr.swagger.service.ProductServiceImpl;
+import jbr.swagger.util.Util;
 
 @RestController
 @Api(value = "Product API Doc", description = "Get Product APIs")
@@ -78,25 +81,27 @@ public class ProductController {
 
   @ApiOperation("Add a product")
   @PostMapping("add-product")
-  public ResponseEntity<Void> addProduct(@Valid @RequestBody ProductModel product, UriComponentsBuilder builder) {
+  public ResponseEntity<Void> addProduct(@Valid @RequestBody ProductDto productDto, UriComponentsBuilder builder) {
 
     try {
-      productService.addProduct(product);
+      productService.addProduct(Util.toProductModel(productDto));
       HttpHeaders headers = new HttpHeaders();
       headers.setLocation(builder.path("/addProduct")
-          .buildAndExpand(product.getId())
+          .buildAndExpand(productDto.getId())
           .toUri());
       return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     } catch (ProductExistsException ex) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
     }
-
   }
 
   @ApiOperation("Add multiple products")
   @PostMapping("add-products")
-  public List<ProductModel> addProducts(@RequestBody ProductModel[] products) {
-    return productService.addProducts(Arrays.asList(products));
+  public List<ProductModel> addProducts(@RequestBody ProductDto[] products) {
+    List<ProductModel> productList = Stream.of(products)
+        .map(e -> Util.toProductModel(e))
+        .collect(Collectors.toList());
+    return productService.addProducts(productList);
   }
 
   @ApiOperation("Update a product detail using id")

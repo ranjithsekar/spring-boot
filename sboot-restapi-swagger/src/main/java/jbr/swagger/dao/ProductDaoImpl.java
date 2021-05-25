@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import jbr.swagger.exception.ProductExistsException;
 import jbr.swagger.exception.ProductNotFoundException;
 import jbr.swagger.model.ProductModel;
 import jbr.swagger.repository.ProductRepository;
 
+@Component
 public class ProductDaoImpl implements ProductDao {
 
   @Autowired
@@ -38,13 +40,13 @@ public class ProductDaoImpl implements ProductDao {
 
   @Override
   public Optional<ProductModel> getProductById(String id) throws ProductNotFoundException {
-    Optional<ProductModel> product = productRepo.findById(id);
+    Optional<ProductModel> product = productRepo.findById(Long.valueOf(id));
 
     if (!product.isPresent()) {
       throw new ProductNotFoundException("Product not found in the repository!!");
     }
 
-    return productRepo.findById(id);
+    return productRepo.findById(Long.valueOf(id));
   }
 
   @Override
@@ -54,7 +56,7 @@ public class ProductDaoImpl implements ProductDao {
 
   @Override
   public ProductModel updateProduct(String id, ProductModel product) throws ProductNotFoundException {
-    Optional<ProductModel> prod = productRepo.findById(id);
+    Optional<ProductModel> prod = productRepo.findById(Long.valueOf(id));
 
     if (!prod.isPresent()) {
       throw new ProductNotFoundException("Product not found in the repository to update!!");
@@ -65,7 +67,7 @@ public class ProductDaoImpl implements ProductDao {
 
   @Override
   public void deleteProduct(String id) {
-    productRepo.deleteById(id);
+    productRepo.deleteById(Long.valueOf(id));
   }
 
 }

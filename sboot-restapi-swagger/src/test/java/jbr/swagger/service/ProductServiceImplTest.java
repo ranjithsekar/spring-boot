@@ -22,12 +22,12 @@ public class ProductServiceImplTest {
 
   @BeforeEach
   public void init() {
-      MockitoAnnotations.initMocks(this);
+    MockitoAnnotations.initMocks(this);
   }
 
   @Test
   final void testAddProduct() throws Exception {
-    ProductModel inputProduct = new ProductModel("100", "Dell Laptop", "Laptop", "55000");
+    ProductModel inputProduct = new ProductModel(100L, "Dell Laptop", "Laptop", "55000");
 
     when(productDaoMock.addProduct(any())).thenReturn(inputProduct);
 
