@@ -27,7 +27,7 @@ import jbr.springboot.restapi.service.ProductService;
  */
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/products")
+@RequestMapping("/product")
 public class ProductController {
 
   @Autowired

@@ -7,7 +7,7 @@
 ### CONCEPTS/TOPICS COVERED
   1. CRUD Operations with H2DB. 
   2. Customized REST API Response.
-  3. JUnit Test for Rest Controller using RestTemplate
+  3. JUnit Test for Rest Controller using RestTemplate (without Mock)
 
 ### HOW TO RUN?  (use POSTMAN Client)
 ### H2 DB Console
