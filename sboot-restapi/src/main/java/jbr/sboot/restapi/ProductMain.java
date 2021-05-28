@@ -1,4 +1,4 @@
-package jbr.springboot.restapi;
+package jbr.sboot.restapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

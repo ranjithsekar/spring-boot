@@ -1,4 +1,4 @@
-package jbr.springboot.restapi.controller;
+package jbr.sboot.restapi.controller;
 
 import java.util.List;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import jbr.springboot.restapi.model.Product;
-import jbr.springboot.restapi.model.ProductApiResponse;
-import jbr.springboot.restapi.model.ProductDto;
-import jbr.springboot.restapi.service.ProductService;
+import jbr.sboot.restapi.model.Product;
+import jbr.sboot.restapi.model.ProductApiResponse;
+import jbr.sboot.restapi.model.ProductDto;
+import jbr.sboot.restapi.service.ProductService;
 
 /**
  * Product Controller

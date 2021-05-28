@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'sboot-rest'
+rootProject.name = 'sboot-restapi'

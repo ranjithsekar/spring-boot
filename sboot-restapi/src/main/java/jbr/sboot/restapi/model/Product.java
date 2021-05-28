@@ -1,4 +1,4 @@
-package jbr.springboot.restapi.model;
+package jbr.sboot.restapi.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

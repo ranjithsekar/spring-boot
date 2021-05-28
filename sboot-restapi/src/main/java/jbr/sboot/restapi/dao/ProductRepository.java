@@ -1,8 +1,8 @@
-package jbr.springboot.restapi.dao;
+package jbr.sboot.restapi.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import jbr.springboot.restapi.model.Product;
+import jbr.sboot.restapi.model.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, String> {

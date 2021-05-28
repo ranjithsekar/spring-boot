@@ -16,9 +16,9 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import jbr.springboot.restapi.model.Product;
-import jbr.springboot.restapi.model.ProductApiResponse;
-import jbr.springboot.restapi.model.ProductDto;
+import jbr.sboot.restapi.model.Product;
+import jbr.sboot.restapi.model.ProductApiResponse;
+import jbr.sboot.restapi.model.ProductDto;
 import lombok.extern.slf4j.Slf4j;
 
 @RunWith(SpringRunner.class)
