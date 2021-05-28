@@ -1,4 +1,4 @@
-package jbr.swagger.exception;
+package jbr.sboot.swagger.exception;
 
 public class ProductExistsException extends Exception {
   private static final long serialVersionUID = 1L;

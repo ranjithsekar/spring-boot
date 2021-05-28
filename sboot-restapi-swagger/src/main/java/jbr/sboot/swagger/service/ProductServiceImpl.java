@@ -1,4 +1,4 @@
-package jbr.swagger.service;
+package jbr.sboot.swagger.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jbr.swagger.dao.ProductDao;
-import jbr.swagger.exception.ProductExistsException;
-import jbr.swagger.exception.ProductNotFoundException;
-import jbr.swagger.model.ProductModel;
+import jbr.sboot.swagger.dao.ProductDao;
+import jbr.sboot.swagger.exception.ProductExistsException;
+import jbr.sboot.swagger.exception.ProductNotFoundException;
+import jbr.sboot.swagger.model.ProductModel;
 import lombok.extern.slf4j.Slf4j;
 
 @Service

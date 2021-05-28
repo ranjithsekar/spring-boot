@@ -1,4 +1,4 @@
-package jbr.swagger.model;
+package jbr.sboot.swagger.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

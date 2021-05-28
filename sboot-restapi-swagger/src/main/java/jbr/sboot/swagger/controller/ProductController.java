@@ -1,4 +1,4 @@
-package jbr.swagger.controller;
+package jbr.sboot.swagger.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,13 +28,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import jbr.swagger.dto.ProductDto;
-import jbr.swagger.exception.ProductExistsException;
-import jbr.swagger.exception.ProductNameNotFoundException;
-import jbr.swagger.exception.ProductNotFoundException;
-import jbr.swagger.model.ProductModel;
-import jbr.swagger.service.ProductServiceImpl;
-import jbr.swagger.util.Util;
+import jbr.sboot.swagger.dto.ProductDto;
+import jbr.sboot.swagger.exception.ProductExistsException;
+import jbr.sboot.swagger.exception.ProductNameNotFoundException;
+import jbr.sboot.swagger.exception.ProductNotFoundException;
+import jbr.sboot.swagger.model.ProductModel;
+import jbr.sboot.swagger.service.ProductServiceImpl;
+import jbr.sboot.swagger.util.Util;
 
 @RestController
 @Api(value = "Product API Doc", description = "Get Product APIs")

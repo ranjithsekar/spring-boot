@@ -1,7 +1,7 @@
-package jbr.swagger.util;
+package jbr.sboot.swagger.util;
 
-import jbr.swagger.dto.ProductDto;
-import jbr.swagger.model.ProductModel;
+import jbr.sboot.swagger.dto.ProductDto;
+import jbr.sboot.swagger.model.ProductModel;
 
 public class Util {
 

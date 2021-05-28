@@ -1,4 +1,4 @@
-package jbr.swagger.exception;
+package jbr.sboot.swagger.exception;
 
 import java.util.Date;
 

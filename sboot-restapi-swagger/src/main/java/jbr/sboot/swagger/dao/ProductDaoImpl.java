@@ -1,4 +1,4 @@
-package jbr.swagger.dao;
+package jbr.sboot.swagger.dao;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import jbr.swagger.exception.ProductExistsException;
-import jbr.swagger.exception.ProductNotFoundException;
-import jbr.swagger.model.ProductModel;
-import jbr.swagger.repository.ProductRepository;
+import jbr.sboot.swagger.exception.ProductExistsException;
+import jbr.sboot.swagger.exception.ProductNotFoundException;
+import jbr.sboot.swagger.model.ProductModel;
+import jbr.sboot.swagger.repository.ProductRepository;
 
 @Component
 public class ProductDaoImpl implements ProductDao {

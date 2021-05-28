@@ -1,4 +1,4 @@
-package jbr.swagger.config;
+package jbr.sboot.swagger.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

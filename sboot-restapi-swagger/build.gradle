@@ -6,7 +6,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group = 'jbr.swagger'
+group = 'jbr.sboot'
 version = '0.1'
 sourceCompatibility = '1.8'
 

@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /restapi-swagger
+    context-path: /sboot-restapi-swagger
   port: 6060
   error:
     include-stacktrace: never

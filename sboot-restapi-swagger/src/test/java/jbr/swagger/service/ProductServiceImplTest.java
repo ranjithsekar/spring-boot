@@ -10,8 +10,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import jbr.swagger.dao.ProductDao;
-import jbr.swagger.model.ProductModel;
+import jbr.sboot.swagger.dao.ProductDao;
+import jbr.sboot.swagger.model.ProductModel;
+import jbr.sboot.swagger.service.ProductServiceImpl;
 
 public class ProductServiceImplTest {
 

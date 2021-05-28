@@ -1,4 +1,4 @@
-package jbr.swagger.dto;
+package jbr.sboot.swagger.dto;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
