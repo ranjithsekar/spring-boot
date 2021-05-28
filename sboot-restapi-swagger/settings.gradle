@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'springboot-restapi-swagger'
+rootProject.name = 'sboot-restapi-swagger'
