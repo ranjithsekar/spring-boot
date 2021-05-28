@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /springboot-restapi
+    context-path: /sboot-restapi
   port: 6060
 
 spring:

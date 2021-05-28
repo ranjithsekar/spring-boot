@@ -16,16 +16,15 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import jbr.sboot.restapi.ProductMain;
 import jbr.sboot.restapi.model.Product;
 import jbr.sboot.restapi.model.ProductApiResponse;
 import jbr.sboot.restapi.model.ProductDto;
-import lombok.extern.slf4j.Slf4j;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-@Slf4j
+@SpringBootTest(classes = ProductMain.class)
 public class ProductServiceTest {
-  private final String baseUrl = "http://localhost:6060/springboot-restapi/products";
+  private final String baseUrl = "http://localhost:6060/sboot-restapi/product";
 
   private RestTemplate restTemplate;
 
