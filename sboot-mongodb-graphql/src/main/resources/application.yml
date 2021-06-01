@@ -1,4 +1,6 @@
 server:
+  servlet:
+    context-path: /sboot-mongodb-graphql
   port: 6060
   
 spring:  data:    mongodb:      uri: mongodb://localhost:27017

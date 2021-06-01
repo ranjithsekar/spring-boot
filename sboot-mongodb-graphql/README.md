@@ -10,22 +10,22 @@
   1. MongoDB CRUD Operations using GraphQL
 
 ### HOW TO RUN?
-http://localhost:6060/greeting
+GET: http://localhost:6060/sboot-mongodb-graphql/product/greeting
 
 ### Add a Product (use Postman Tool)
-http://localhost:6060/addProduct
+POST: http://localhost:6060/sboot-mongodb-graphql/product/add
 
 ```json
 {
-    "id": "100",
+    "id": 100,
     "name": "Samsung Galaxy S10",
-    "type": "Mobile",
-    "price": "55000"
+    "category": "Mobile",
+    "price": 55000
 }
 ```
 
 ### Get All products (use Postman Tool)
-http://localhost:6060/graphql
+GET: http://localhost:6060/sboot-mongodb-graphql/product/getall
 
 ``` json
 {
@@ -37,11 +37,11 @@ http://localhost:6060/graphql
 }
 ```
 
-### Check your Schema
-http://localhost:6060/graphql/schema.json
+### Check your Schema (use Browser)
+http://localhost:6060/sboot-mongodb-graphql/graphql/schema.json
 
-### GraphiQL Console
-http://localhost:6060/graphiql
+### GraphiQL Console (use Browser)
+http://localhost:6060/sboot-mongodb-graphql/graphiql
 
 ``` json
 {

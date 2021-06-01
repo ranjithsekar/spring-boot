@@ -1,4 +1,4 @@
-package jbr.graphql.controller;
+package jbr.sboot.graphql.controller;
 
 import java.util.List;
 
@@ -8,12 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import jbr.graphql.model.Product;
-import jbr.graphql.repositories.ProductRepository;
+import jbr.sboot.graphql.model.Product;
+import jbr.sboot.graphql.repositories.ProductRepository;
 
 @RestController
+@RequestMapping("/product")
 public class ProductController {
   @Autowired
   private ProductRepository productDao;
@@ -23,12 +25,12 @@ public class ProductController {
     return new ResponseEntity<>("Welcome", HttpStatus.OK);
   }
 
-  @PostMapping("/addProduct")
+  @PostMapping("/add")
   public Product addProduct(@RequestBody Product product) {
     return productDao.save(product);
   }
 
-  @GetMapping("/getAllProducts")
+  @GetMapping("/getall")
   public List<Product> getAllProducts() {
     return productDao.findAll();
   }

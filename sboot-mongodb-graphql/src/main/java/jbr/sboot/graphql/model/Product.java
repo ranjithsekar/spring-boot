@@ -1,4 +1,4 @@
-package jbr.graphql.model;
+package jbr.sboot.graphql.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,8 +16,8 @@ import lombok.ToString;
 public class Product {
 
   @Id
-  private String id;
+  private Long id;
   private String name;
-  private String type;
-  private String price;
+  private String category;
+  private Long price;
 }

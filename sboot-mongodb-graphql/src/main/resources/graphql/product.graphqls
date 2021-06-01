@@ -4,14 +4,14 @@ type Query{
 }
 
 type Mutation {
-	addProduct(id: String, name: String, type: String, price: String): Product
+	addProduct(id: Long, name: String, category: String, price: Long): Product
 	deleteProduct(id: String): Boolean
 }
 
 type Product{
-  	id: String
+  	id: Long
   	name: String
-  	type: String
-  	price: String
+  	category: String
+  	price: Long
 }
 

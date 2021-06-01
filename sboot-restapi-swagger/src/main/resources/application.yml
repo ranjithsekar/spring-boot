@@ -21,4 +21,3 @@ spring:
     console:
       path: /h2-console
       enabled: true
-  

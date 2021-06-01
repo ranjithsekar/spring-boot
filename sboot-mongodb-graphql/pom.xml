@@ -9,7 +9,7 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>jbr.sboot.mongodb.graphql</groupId>
+	<groupId>jbr.sboot</groupId>
 	<artifactId>sboot-mongodb-graphql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>graphql-sboot-mongodb</name>

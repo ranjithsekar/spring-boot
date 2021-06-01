@@ -1,4 +1,4 @@
-package jbr.graphql.resolver;
+package jbr.sboot.graphql.resolver;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
-import jbr.graphql.model.Product;
-import jbr.graphql.repositories.ProductRepository;
+import jbr.sboot.graphql.model.Product;
+import jbr.sboot.graphql.repositories.ProductRepository;
 
 @Component
 public class Query implements GraphQLQueryResolver {
@@ -20,7 +20,7 @@ public class Query implements GraphQLQueryResolver {
     return productRepository.findAll();
   }
 
-  public Product getProductById(String id) {
+  public Product getProductById(Long id) {
     return productRepository.findById(id)
         .get();
   }
