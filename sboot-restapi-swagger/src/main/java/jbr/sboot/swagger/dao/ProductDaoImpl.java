@@ -70,4 +70,19 @@ public class ProductDaoImpl implements ProductDao {
     productRepo.deleteById(Long.valueOf(id));
   }
 
+  @Override
+  public List<ProductModel> getProductsByPriceMinMax(String minPrice, String maxPrice) {
+    return productRepo.getProductsByPriceMinMax(minPrice, maxPrice);
+  }
+
+  @Override
+  public List<ProductModel> getProductsByPriceMin(String minPrice) {
+    return productRepo.getProductsByPriceMin(minPrice);
+  }
+
+  @Override
+  public List<ProductModel> getProductsByPriceMax(String maxPrice) {
+    return productRepo.getProductsByPriceMax(maxPrice);
+  }
+
 }

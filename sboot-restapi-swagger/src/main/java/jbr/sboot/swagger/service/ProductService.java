@@ -22,4 +22,10 @@ public interface ProductService {
   ProductModel updateProduct(String id, ProductModel product) throws ProductNotFoundException;
 
   void deleteProduct(String id);
+  
+  List<ProductModel> getProductsByPriceMinMax(String minPrice, String maxPrice);
+
+  List<ProductModel> getProductsByPriceMin(String minPrice);
+
+  List<ProductModel> getProductsByPriceMax(String minPrice);
 }

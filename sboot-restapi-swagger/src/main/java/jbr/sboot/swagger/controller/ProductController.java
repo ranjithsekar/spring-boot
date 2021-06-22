@@ -120,4 +120,22 @@ public class ProductController {
     productService.deleteProduct(id);
   }
 
+  @ApiOperation("Get a product by price range")
+  @GetMapping("product-by-price-range/{minPrice}/{maxPrice}")
+  public List<ProductModel> getProductByPriceRange(@PathVariable String minPrice, @PathVariable String maxPrice) {
+    return productService.getProductsByPriceMinMax(minPrice, maxPrice);
+  }
+
+  @ApiOperation("Get a product by minimum price")
+  @GetMapping("product-by-min-price/{minPrice}")
+  public List<ProductModel> getProductByMinPrice(@PathVariable String minPrice) {
+    return productService.getProductsByPriceMin(minPrice);
+  }
+
+  @ApiOperation("Get a product by maximum price")
+  @GetMapping("product-by-max-price/{maxPrice}")
+  public List<ProductModel> getProductByMaxPrice(@PathVariable String maxPrice) {
+    return productService.getProductsByPriceMax(maxPrice);
+  }
+
 }

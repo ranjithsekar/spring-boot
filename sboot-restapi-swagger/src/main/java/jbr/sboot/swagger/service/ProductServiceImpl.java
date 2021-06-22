@@ -62,4 +62,19 @@ public class ProductServiceImpl implements ProductService {
     log.info("deleteProduct: name" + name);
     return productDao.getProductByName(name);
   }
+
+  @Override
+  public List<ProductModel> getProductsByPriceMinMax(String minPrice, String maxPrice) {
+    return productDao.getProductsByPriceMinMax(minPrice, maxPrice);
+  }
+
+  @Override
+  public List<ProductModel> getProductsByPriceMin(String minPrice) {
+    return productDao.getProductsByPriceMin(minPrice);
+  }
+
+  @Override
+  public List<ProductModel> getProductsByPriceMax(String maxPrice) {
+    return productDao.getProductsByPriceMax(maxPrice);
+  }
 }
