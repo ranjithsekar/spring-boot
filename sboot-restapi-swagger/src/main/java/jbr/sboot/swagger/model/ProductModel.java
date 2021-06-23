@@ -34,5 +34,5 @@ public class ProductModel {
   private String category;
 
   @Column(name = "price")
-  private String price;
+  private Long price;
 }

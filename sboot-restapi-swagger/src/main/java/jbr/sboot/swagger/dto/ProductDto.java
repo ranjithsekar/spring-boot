@@ -1,7 +1,6 @@
 package jbr.sboot.swagger.dto;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,5 +22,5 @@ public class ProductDto {
   private String category;
 
   @ApiModelProperty(notes = "Product PRICE")
-  private String price;
+  private Long price;
 }

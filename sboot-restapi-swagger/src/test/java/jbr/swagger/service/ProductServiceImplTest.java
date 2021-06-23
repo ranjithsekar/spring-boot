@@ -28,7 +28,7 @@ public class ProductServiceImplTest {
 
   @Test
   final void testAddProduct() throws Exception {
-    ProductModel inputProduct = new ProductModel(100L, "Dell Laptop", "Laptop", "55000");
+    ProductModel inputProduct = new ProductModel(100L, "Dell Laptop", "Laptop", 55000L);
 
     when(productDaoMock.addProduct(any())).thenReturn(inputProduct);
 

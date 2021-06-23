@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -40,6 +41,7 @@ import jbr.sboot.swagger.util.Util;
 @Api(value = "Product API Doc", description = "Get Product APIs")
 @CrossOrigin(origins = "http://localhost:4200")
 @Validated
+@RequestMapping("/products")
 public class ProductController {
 
   @Autowired
@@ -51,14 +53,14 @@ public class ProductController {
   }
 
   @ApiOperation("Get all available products")
-  @GetMapping("products")
+  @GetMapping("/all")
   public List<ProductModel> getAllProducts() {
     return productService.getAllProducts();
   }
 
   @ApiOperation("Get a product by id")
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
-  @GetMapping("product-by-id/{id}")
+  @GetMapping("/by-id/{id}")
   public Optional<ProductModel> getProductById(@Valid @PathVariable @Min(1) String id) {
     try {
       return productService.getProductById(id);
@@ -69,7 +71,7 @@ public class ProductController {
 
   @ApiOperation("Get a product by name")
   @ApiResponses(value = { @ApiResponse(code = 1000, message = "SUCCESS"), @ApiResponse(code = 2000, message = "FAIL") })
-  @GetMapping("product-by-name/{name}")
+  @GetMapping("/by-name/{name}")
   public ProductModel getProductByName(@PathVariable("name") String name) throws ProductNameNotFoundException {
     ProductModel product = productService.getProductByName(name);
 
@@ -80,7 +82,7 @@ public class ProductController {
   }
 
   @ApiOperation("Add a product")
-  @PostMapping("add-product")
+  @PostMapping("/add-product")
   public ResponseEntity<Void> addProduct(@Valid @RequestBody ProductDto productDto, UriComponentsBuilder builder) {
 
     try {
@@ -96,7 +98,7 @@ public class ProductController {
   }
 
   @ApiOperation("Add multiple products")
-  @PostMapping("add-products")
+  @PostMapping("/add-products")
   public List<ProductModel> addProducts(@RequestBody ProductDto[] products) {
     List<ProductModel> productList = Stream.of(products)
         .map(e -> Util.toProductModel(e))
@@ -105,7 +107,7 @@ public class ProductController {
   }
 
   @ApiOperation("Update a product detail using id")
-  @PutMapping("update-product/{id}")
+  @PutMapping("/update-product/{id}")
   public void updateProduct(@RequestBody ProductModel product, @PathVariable String id) {
     try {
       productService.updateProduct(id, product);
@@ -115,25 +117,25 @@ public class ProductController {
   }
 
   @ApiOperation("Delete a product using id")
-  @DeleteMapping("delete-product/{id}")
+  @DeleteMapping("/delete-product/{id}")
   public void deleteProduct(@PathVariable String id) {
     productService.deleteProduct(id);
   }
 
   @ApiOperation("Get a product by price range")
-  @GetMapping("product-by-price-range/{minPrice}/{maxPrice}")
+  @GetMapping("/by-price-range/{minPrice}/{maxPrice}")
   public List<ProductModel> getProductByPriceRange(@PathVariable String minPrice, @PathVariable String maxPrice) {
     return productService.getProductsByPriceMinMax(minPrice, maxPrice);
   }
 
   @ApiOperation("Get a product by minimum price")
-  @GetMapping("product-by-min-price/{minPrice}")
+  @GetMapping("/by-min-price/{minPrice}")
   public List<ProductModel> getProductByMinPrice(@PathVariable String minPrice) {
     return productService.getProductsByPriceMin(minPrice);
   }
 
   @ApiOperation("Get a product by maximum price")
-  @GetMapping("product-by-max-price/{maxPrice}")
+  @GetMapping("/by-max-price/{maxPrice}")
   public List<ProductModel> getProductByMaxPrice(@PathVariable String maxPrice) {
     return productService.getProductsByPriceMax(maxPrice);
   }
