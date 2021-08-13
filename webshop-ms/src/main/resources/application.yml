@@ -1,0 +1,29 @@
+server:
+  port: 6060
+
+spring:
+  data:
+    rest:
+      base-path: /webshop/api
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:  
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: chemexp
+    password: HRW4p2bxb5ghTFZ
+    
+logging:
+  file:
+    name: logs/app-debug.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: ERROR
+    com.derwent: DEBUG
+    org.hibernate: ERROR
+  
+cors:
+  domain: "http://localhost:4200"
+  headers: "origin,accept,x-requested-with,content-type,access-control-request-method,access-control-request-headers,authorization,cache-control,expires,pragma"
+  methods: "PUT,DELETE,POST,GET,OPTIONS,PATCH,HEAD"
