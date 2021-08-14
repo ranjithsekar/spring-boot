@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "mn1",
+		"scid": "fh1",
+		"title": "Men shirt 1",
+		"desc": "Men shirt 1 desc",
+		"image": "",
+		"price": "800",
+		"rating": "4.1"
+	},
+	{
+		"pid": "mn2",
+		"scid": "fh1",
+		"title": "Men shirt 2",
+		"desc": "Men shirt 2 desc",
+		"image": "",
+		"price": "900",
+		"rating": "4.2"
+	},
+	{
+		"pid": "mn3",
+		"scid": "fh1",
+		"title": "Men shirt 3",
+		"desc": "Men shirt 3 desc",
+		"image": "",
+		"price": "10000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "mn4",
+		"scid": "fh1",
+		"title": "Men shirt 4",
+		"desc": "Men shirt 4 desc",
+		"image": "",
+		"price": "1100",
+		"rating": "4.3"
+	},
+	{
+		"pid": "mn5",
+		"scid": "fh1",
+		"title": "Men shirt 5",
+		"desc": "Men shirt 5 desc",
+		"image": "",
+		"price": "1200",
+		"rating": "4.2"
+	}
+]

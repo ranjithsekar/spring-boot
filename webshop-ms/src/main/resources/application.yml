@@ -5,12 +5,21 @@ spring:
   data:
     rest:
       base-path: /webshop/api
+    mongodb:
+      database: webshop
+      host: localhost
+      port: 27017
+      ## uri: mongodb://localhost:27017
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:  
     url: "jdbc:postgresql://localhost:5432/postgres"
     username: chemexp
     password: HRW4p2bxb5ghTFZ
+
+graphiql:
+  subscriptions:
+    timeout: 300000
     
 logging:
   file:

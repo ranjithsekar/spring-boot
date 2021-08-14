@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "fr1",
+		"scid": "ap2",
+		"title": "Samsung Refrigerator 1",
+		"desc": "Samsung Refrigerator 1 desc",
+		"image": "",
+		"price": "8000",
+		"rating": "4.1"
+	},
+	{
+		"pid": "fr2",
+		"scid": "ap2",
+		"title": "Samsung Refrigerator 2",
+		"desc": "Samsung Refrigerator 2 desc",
+		"image": "",
+		"price": "9000",
+		"rating": "4.2"
+	},
+	{
+		"pid": "fr3",
+		"scid": "ap2",
+		"title": "Samsung Refrigerator 3",
+		"desc": "Samsung Refrigerator 3 desc",
+		"image": "",
+		"price": "10000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "fr4",
+		"scid": "ap2",
+		"title": "Samsung Refrigerator 4",
+		"desc": "Samsung Refrigerator 4 desc",
+		"image": "",
+		"price": "11000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "fr5",
+		"scid": "ap2",
+		"title": "Samsung Refrigerator 5",
+		"desc": "Samsung Refrigerator 5 desc",
+		"image": "",
+		"price": "12000",
+		"rating": "4.2"
+	}
+]

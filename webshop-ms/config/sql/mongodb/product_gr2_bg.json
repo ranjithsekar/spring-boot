@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "bg1",
+		"scid": "gr2",
+		"title": "PEPSI Cooldrink 1",
+		"desc": "PEPSI Cooldrink 1 desc",
+		"image": "",
+		"price": "80",
+		"rating": "4.1"
+	},
+	{
+		"pid": "bg2",
+		"scid": "gr2",
+		"title": "PEPSI Cooldrink 2",
+		"desc": "PEPSI Cooldrink 2 desc",
+		"image": "",
+		"price": "90",
+		"rating": "4.2"
+	},
+	{
+		"pid": "bg3",
+		"scid": "gr2",
+		"title": "PEPSI Cooldrink 3",
+		"desc": "PEPSI Cooldrink 3 desc",
+		"image": "",
+		"price": "100",
+		"rating": "4.3"
+	},
+	{
+		"pid": "bg4",
+		"scid": "gr2",
+		"title": "PEPSI Cooldrink 4",
+		"desc": "PEPSI Cooldrink 4 desc",
+		"image": "",
+		"price": "110",
+		"rating": "4.3"
+	},
+	{
+		"pid": "bg5",
+		"scid": "gr2",
+		"title": "PEPSI Cooldrink 5",
+		"desc": "PEPSI Cooldrink 5 desc",
+		"image": "",
+		"price": "120",
+		"rating": "4.2"
+	}
+]

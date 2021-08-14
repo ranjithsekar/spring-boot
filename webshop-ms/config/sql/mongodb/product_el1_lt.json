@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "lt1",
+		"scid": "el1",
+		"title": "dell vostro 5432",
+		"desc": "dell vostro 5432 desc",
+		"image": "",
+		"price": "8000",
+		"rating": "4.1"
+	},
+	{
+		"pid": "lt2",
+		"scid": "el1",
+		"title": "dell vostro 5433",
+		"desc": "dell vostro 5433 desc",
+		"image": "",
+		"price": "9000",
+		"rating": "4.2"
+	},
+	{
+		"pid": "lt3",
+		"scid": "el1",
+		"title": "dell vostro 5434",
+		"desc": "dell vostro 5434 desc",
+		"image": "",
+		"price": "10000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "lt4",
+		"scid": "el1",
+		"title": "dell vostro 5435",
+		"desc": "dell vostro 5435 desc",
+		"image": "",
+		"price": "11000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "lt5",
+		"scid": "el1",
+		"title": "dell vostro 5436",
+		"desc": "dell vostro 5436 desc",
+		"image": "",
+		"price": "12000",
+		"rating": "4.2"
+	}
+]

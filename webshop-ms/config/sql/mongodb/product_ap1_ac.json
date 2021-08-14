@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "ac1",
+		"scid": "ap1",
+		"title": "LG Split AC 1",
+		"desc": "LG Split AC 1 desc",
+		"image": "",
+		"price": "8000",
+		"rating": "4.1"
+	},
+	{
+		"pid": "ac2",
+		"scid": "ap1",
+		"title": "LG Split AC 2",
+		"desc": "LG Split AC 2 desc",
+		"image": "",
+		"price": "9000",
+		"rating": "4.2"
+	},
+	{
+		"pid": "ac3",
+		"scid": "ap1",
+		"title": "LG Split AC 3",
+		"desc": "LG Split AC 3 desc",
+		"image": "",
+		"price": "10000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "ac4",
+		"scid": "ap1",
+		"title": "LG Split AC 4",
+		"desc": "LG Split AC 4 desc",
+		"image": "",
+		"price": "11000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "ac5",
+		"scid": "ap1",
+		"title": "LG Split AC 5",
+		"desc": "LG Split AC 5 desc",
+		"image": "",
+		"price": "12000",
+		"rating": "4.2"
+	}
+]

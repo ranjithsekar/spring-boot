@@ -56,7 +56,7 @@ http://localhost:6060/webshop/api/user/add
 }
 ```
 ```
-	{
+{
     "usertype": "admin",
     "username": "ranjtih",
     "password": "sekar",
@@ -67,4 +67,19 @@ http://localhost:6060/webshop/api/user/add
     "phone": "98633"
 }
 ```
+
+## Graphql UI
+http://localhost:6060/graphiql
+```
+{
+  getAllProducts {
+    pid
+    scid
+    title
+    price
+  }
+}
+	
+```
+
 

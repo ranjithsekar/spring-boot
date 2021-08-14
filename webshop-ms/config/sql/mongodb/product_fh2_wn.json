@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "wn1",
+		"scid": "fh2",
+		"title": "Women saree 1",
+		"desc": "Women saree 1 desc",
+		"image": "",
+		"price": "800",
+		"rating": "4.1"
+	},
+	{
+		"pid": "wn2",
+		"scid": "fh2",
+		"title": "Women saree 2",
+		"desc": "Women saree 2 desc",
+		"image": "",
+		"price": "900",
+		"rating": "4.2"
+	},
+	{
+		"pid": "wn3",
+		"scid": "fh2",
+		"title": "Women saree 3",
+		"desc": "Women saree 3 desc",
+		"image": "",
+		"price": "10000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "wn4",
+		"scid": "fh2",
+		"title": "Women saree 4",
+		"desc": "Women saree 4 desc",
+		"image": "",
+		"price": "1100",
+		"rating": "4.3"
+	},
+	{
+		"pid": "wn5",
+		"scid": "fh2",
+		"title": "Women saree 5",
+		"desc": "Women saree 5 desc",
+		"image": "",
+		"price": "1200",
+		"rating": "4.2"
+	}
+]

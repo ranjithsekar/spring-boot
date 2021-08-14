@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "sp1",
+		"scid": "mo1",
+		"title": "realme c1",
+		"desc": "realme c1 desc",
+		"image": "",
+		"price": "8000",
+		"rating": "4.1"
+	},
+	{
+		"pid": "sp2",
+		"scid": "mo1",
+		"title": "realme c2",
+		"desc": "realme c2 desc",
+		"image": "",
+		"price": "9000",
+		"rating": "4.2"
+	},
+	{
+		"pid": "sp3",
+		"scid": "mo1",
+		"title": "realme c3",
+		"desc": "realme c3 desc",
+		"image": "",
+		"price": "10000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "sp4",
+		"scid": "mo1",
+		"title": "realme c4",
+		"desc": "realme c4 desc",
+		"image": "",
+		"price": "11000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "sp5",
+		"scid": "mo1",
+		"title": "realme c5",
+		"desc": "realme c5 desc",
+		"image": "",
+		"price": "12000",
+		"rating": "4.2"
+	}
+]

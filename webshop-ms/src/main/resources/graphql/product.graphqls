@@ -1,0 +1,37 @@
+schema {
+	query: ProductQuery
+}
+
+type ProductQuery {
+ 	getAllProducts: [ProductModel]
+}
+
+type ProductResponseModel {
+	category: String
+	subcategory: String
+  	title: String
+  	desc: String
+  	price: String
+  	rating: String
+}
+
+type ProductModel {
+  	pid: String
+  	scid: String
+  	title: String
+  	desc: String
+  	image: String
+  	price: String
+  	rating: String
+}
+
+type CategoryModel {
+	cid: String
+	name: String
+}
+
+type SubcategoryModel {
+	scid: String
+	cid: String
+	name: String
+}

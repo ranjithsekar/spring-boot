@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "tl1",
+		"scid": "el2",
+		"title": "samsung tab 7",
+		"desc": "samsung tab 7 desc",
+		"image": "",
+		"price": "8000",
+		"rating": "4.1"
+	},
+	{
+		"pid": "tl2",
+		"scid": "el2",
+		"title": "samsung tab 8",
+		"desc": "samsung tab 8 desc",
+		"image": "",
+		"price": "9000",
+		"rating": "4.2"
+	},
+	{
+		"pid": "tl3",
+		"scid": "el2",
+		"title": "samsung tab 9",
+		"desc": "samsung tab 9 desc",
+		"image": "",
+		"price": "10000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "tl4",
+		"scid": "el2",
+		"title": "samsung tab 10",
+		"desc": "samsung tab 10 desc",
+		"image": "",
+		"price": "11000",
+		"rating": "4.3"
+	},
+	{
+		"pid": "tl5",
+		"scid": "el2",
+		"title": "samsung tab 10A",
+		"desc": "samsung tab 10A desc",
+		"image": "",
+		"price": "12000",
+		"rating": "4.2"
+	}
+]

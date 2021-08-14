@@ -1,0 +1,52 @@
+[
+	{
+		"scid": "mo1",
+		"name": "smartphone",
+		"cid": "1"
+	},
+	{
+		"scid": "mo2",
+		"name": "featurephone",
+		"cid": "1"
+	},
+	{
+		"scid": "el1",
+		"name": "laptop",
+		"cid": "2"
+	},
+	{
+		"scid": "el2",
+		"name": "tablet",
+		"cid": "2"
+	},
+	{
+		"scid": "ap1",
+		"name": "ac",
+		"cid": "3"
+	},
+	{
+		"scid": "ap2",
+		"name": "fridge",
+		"cid": "3"
+	},
+	{
+		"scid": "gr1",
+		"name": "staple",
+		"cid": "4"
+	},
+	{
+		"scid": "gr2",
+		"name": "beverage",
+		"cid": "4"
+	},
+	{
+		"scid": "fh1",
+		"name": "men",
+		"cid": "5"
+	},
+	{
+		"scid": "fh2",
+		"name": "women",
+		"cid": "5"
+	}
+]

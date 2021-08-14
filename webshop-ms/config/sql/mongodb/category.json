@@ -1,0 +1,22 @@
+[
+	{
+		"cid": "1",
+		"name": "mobile"
+	},
+	{
+		"cid": "2",
+		"name": "electronic"
+	},
+	{
+		"cid": "3",
+		"name": "appliance"
+	},
+	{
+		"cid": "4",
+		"name": "grocery"
+	},
+	{
+		"cid": "5",
+		"name": "fashion"
+	}
+]

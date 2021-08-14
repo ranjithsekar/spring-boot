@@ -1,0 +1,47 @@
+[
+	{
+		"pid": "st1",
+		"scid": "gr1",
+		"title": "TATA Tea 1",
+		"desc": "TATA Tea 1 desc",
+		"image": "",
+		"price": "80",
+		"rating": "4.1"
+	},
+	{
+		"pid": "st2",
+		"scid": "gr1",
+		"title": "TATA Tea 2",
+		"desc": "TATA Tea 2 desc",
+		"image": "",
+		"price": "90",
+		"rating": "4.2"
+	},
+	{
+		"pid": "st3",
+		"scid": "gr1",
+		"title": "TATA Tea 3",
+		"desc": "TATA Tea 3 desc",
+		"image": "",
+		"price": "100",
+		"rating": "4.3"
+	},
+	{
+		"pid": "st4",
+		"scid": "gr1",
+		"title": "TATA Tea 4",
+		"desc": "TATA Tea 4 desc",
+		"image": "",
+		"price": "110",
+		"rating": "4.3"
+	},
+	{
+		"pid": "st5",
+		"scid": "gr1",
+		"title": "TATA Tea 5",
+		"desc": "TATA Tea 5 desc",
+		"image": "",
+		"price": "120",
+		"rating": "4.2"
+	}
+]
