@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import jbr.webshop.common.exception.DaoException;
-import jbr.webshop.user.model.LoginEntity;
-import jbr.webshop.user.model.UserEntity;
+import jbr.webshop.user.dto.UserDto;
+import jbr.webshop.user.model.LoginModel;
+import jbr.webshop.user.model.UserModel;
 import jbr.webshop.user.model.UserResponseModel;
+import jbr.webshop.user.repo.LoginRepository;
 import jbr.webshop.user.repo.UserRepository;
+import jbr.webshop.user.util.UserDtoMapper;
 
 @Component
 public class UserDaoImpl implements UserDao {
@@ -15,21 +18,30 @@ public class UserDaoImpl implements UserDao {
   @Autowired
   private UserRepository userRepo;
 
+  @Autowired
+  private LoginRepository loginRepo;
+
   @Override
-  public UserResponseModel validate(LoginEntity loginModel) throws DaoException {
+  public UserResponseModel validate(LoginModel loginModel) throws DaoException {
     try {
-      UserResponseModel resp = userRepo.validateUser(loginModel.getUsername(), loginModel.getPassword()); 
-      return resp;
+      return userRepo.validateUser(loginModel.getUsername(), loginModel.getPassword());
     } catch (Exception e) {
       throw new DaoException(e.getMessage(), e);
     }
   }
 
   @Override
-  public UserEntity saveUser(UserEntity userModel) throws DaoException {
+  public UserModel addUser(UserDto userDto) throws DaoException {
+
+    UserModel userModel = UserDtoMapper.getUserModel(userDto);
+    LoginModel loginModel = UserDtoMapper.getLoginModel(userDto);
 
     try {
-      return null;
+      UserModel outputUser = userRepo.save(userModel);
+      loginModel.setUserid(outputUser.getUserid());
+      loginRepo.save(loginModel);
+
+      return outputUser;
     } catch (Exception e) {
       throw new DaoException(e.getMessage(), e);
     }

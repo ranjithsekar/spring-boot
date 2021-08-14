@@ -5,11 +5,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import jbr.webshop.user.model.UserEntity;
+import jbr.webshop.user.model.UserModel;
 import jbr.webshop.user.model.UserResponseModel;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<UserModel, Long> {
 
   @Query(value = "SELECT u.firstname AS firstname, u.lastname AS lastname, u.email AS email, u.address AS address, u.phone AS phone "
       + "FROM Login l, Users u "

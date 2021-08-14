@@ -11,10 +11,10 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import jbr.webshop.user.dao.UserDao;
-import jbr.webshop.user.model.LoginEntity;
+import jbr.webshop.user.model.LoginModel;
 import jbr.webshop.user.model.UserResponseModel;
 import jbr.webshop.user.service.UserServiceImpl;
-import jbr.webshop.util.UserResponseModelImpl;
+import jbr.webshop.user.util.UserResponseModelImpl;
 
 class UserServiceImplTest {
 
@@ -33,9 +33,9 @@ class UserServiceImplTest {
   final void testValidate() throws Exception {
     UserResponseModelImpl input = new UserResponseModelImpl();
 
-    when(userDaoMock.validate(any(LoginEntity.class))).thenReturn(input);
+    when(userDaoMock.validate(any(LoginModel.class))).thenReturn(input);
 
-    UserResponseModel output = userServiceMock.validate(new LoginEntity());
+    UserResponseModel output = userServiceMock.validate(new LoginModel());
     Assertions.assertNotNull(output);
     Assertions.assertEquals(input.getEmail(), output.getEmail());
   }

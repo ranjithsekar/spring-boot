@@ -19,9 +19,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jbr.webshop.common.exception.ServiceException;
 import jbr.webshop.user.dao.UserDaoImpl;
-import jbr.webshop.user.model.LoginEntity;
+import jbr.webshop.user.model.LoginModel;
 import jbr.webshop.user.service.UserServiceImpl;
-import jbr.webshop.util.UserResponseModelImpl;
+import jbr.webshop.user.util.UserResponseModelImpl;
 import lombok.extern.slf4j.Slf4j;
 
 @RunWith(SpringRunner.class)
@@ -43,7 +43,7 @@ class UserControllerTest {
   final void testValidate() throws ServiceException {
     UserResponseModelImpl input = new UserResponseModelImpl();
 
-    when(userServiceMock.validate(any(LoginEntity.class))).thenReturn(input);
+    when(userServiceMock.validate(any(LoginModel.class))).thenReturn(input);
 
     try {
       mockMvc.perform(post("${spring.data.rest.base-path}/user/validate").contentType(MediaType.APPLICATION_JSON)

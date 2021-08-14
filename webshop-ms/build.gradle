@@ -54,7 +54,7 @@ jacocoTestReport {
     reports {
         xml.enabled true
         csv.enabled false
-        html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
+        html.destination layout.buildDirectory.dir('jacoco-reports').get().asFile
     }
     afterEvaluate {
     	classDirectories.from = files(classDirectories.files.collect {

@@ -1,5 +1,6 @@
 package jbr.webshop.user.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -7,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import jbr.webshop.common.model.ApiResponseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "login")
-public class LoginEntity implements ApiResponseEntity {
+public class LoginModel implements Serializable {
 
   private static final long serialVersionUID = 1L;
 

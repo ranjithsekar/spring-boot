@@ -1,13 +1,13 @@
 package jbr.webshop.user.service;
 
 import jbr.webshop.common.exception.ServiceException;
-import jbr.webshop.user.model.LoginEntity;
-import jbr.webshop.user.model.UserEntity;
+import jbr.webshop.user.dto.UserDto;
+import jbr.webshop.user.model.LoginModel;
 import jbr.webshop.user.model.UserResponseModel;
 
 public interface UserService {
 
-  UserResponseModel validate(LoginEntity loginModel) throws ServiceException;
+  UserResponseModel validate(LoginModel loginModel) throws ServiceException;
   
-  UserEntity saveUser(UserEntity userModel) throws ServiceException;
+  UserResponseModel addUser(UserDto userDto) throws ServiceException;
 }

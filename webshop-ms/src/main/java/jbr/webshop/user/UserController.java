@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import jbr.webshop.common.exception.ServiceException;
 import jbr.webshop.common.model.ApiResponseEnvelope;
 import jbr.webshop.user.dto.LoginDto;
-import jbr.webshop.user.model.LoginEntity;
+import jbr.webshop.user.dto.UserDto;
+import jbr.webshop.user.model.LoginModel;
 import jbr.webshop.user.model.UserResponse;
 import jbr.webshop.user.model.UserResponseModel;
 import jbr.webshop.user.service.UserService;
@@ -27,13 +28,26 @@ public class UserController {
 
   @RequestMapping(value = "${spring.data.rest.base-path}/user/validate", method = RequestMethod.POST)
   public ResponseEntity<ApiResponseEnvelope> validate(@RequestBody LoginDto loginDto) {
-    LoginEntity loginModel = UserDtoMapper.getLoginModel(loginDto);
+    LoginModel loginModel = UserDtoMapper.getLoginModel(loginDto);
     try {
       UserResponseModel userResponseModel = userService.validate(loginModel);
       return new ResponseEntity<>(new ApiResponseEnvelope(HttpStatus.OK.value(), new UserResponse(userResponseModel)),
           HttpStatus.OK);
     } catch (ServiceException e) {
       log.error("Error during user validate: " + e);
+      return new ResponseEntity<>(new ApiResponseEnvelope(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage()),
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  @RequestMapping(value = "${spring.data.rest.base-path}/user/add", method = RequestMethod.POST)
+  public ResponseEntity<ApiResponseEnvelope> validate(@RequestBody UserDto userDto) {
+    try {
+      UserResponseModel userResponseModel = userService.addUser(userDto);
+      return new ResponseEntity<>(new ApiResponseEnvelope(HttpStatus.OK.value(), new UserResponse(userResponseModel)),
+          HttpStatus.OK);
+    } catch (ServiceException e) {
+      log.error("Error during user add: " + e);
       return new ResponseEntity<>(new ApiResponseEnvelope(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage()),
           HttpStatus.INTERNAL_SERVER_ERROR);
     }
