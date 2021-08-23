@@ -1,4 +1,4 @@
-package jbr.sboot.restapi.model;
+package jbr.sboot.prod.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

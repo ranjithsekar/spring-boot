@@ -1,15 +1,13 @@
 plugins {
- 	id 'org.springframework.boot' version '2.2.4.RELEASE'
-    id 'java'
+  id 'org.springframework.boot' version '2.3.4.RELEASE'
+  id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+  id 'java'
+  id "jacoco" 
 }
 
-apply plugin: 'io.spring.dependency-management'
-
+group = 'jbr.sboot'
+version = '1.0'
 sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
-
-group = 'jbr.springboot'
-version = '0.1'
 
 configurations {
 	compileOnly {
@@ -23,17 +21,57 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	
-	runtime('com.h2database:h2')
-	runtime('org.springframework.boot:spring-boot-devtools')
-	
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompileOnly 'org.projectlombok:lombok'
-	testAnnotationProcessor 'org.projectlombok:lombok'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+  
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  
+  runtimeOnly 'org.postgresql:postgresql'
+  
+  compileOnly 'org.projectlombok:lombok'
+  annotationProcessor 'org.projectlombok:lombok'
+  
+  testImplementation 'org.springframework.boot:spring-boot-starter-test' 
+  testAnnotationProcessor 'org.projectlombok:lombok'
+  testCompileOnly 'org.projectlombok:lombok'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed" //, "standardOut", "standardError"
+    }
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
+    }
+    afterEvaluate {
+      classDirectories.from = files(classDirectories.files.collect {
+          fileTree(dir: it, exclude: [
+              '**/model/**.class'
+            ])
+        })
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.5"
+    reportsDir = file("$buildDir/reports/jacoco")
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 1
+            }
+        }
+    }
 }

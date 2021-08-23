@@ -1,16 +1,31 @@
 server:
-  servlet:
-    context-path: /sboot-restapi
   port: 6060
 
 spring:
+  data:
+    rest:
+      base-path: /sboot-rest/api
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-    username: ranjith
-    password: sekar
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: chemexp
+    password: HRW4p2bxb5ghTFZ
     
-  h2:
-    console:
-      path: /h2-console
-      enabled: true
+logging:
+  file:
+    name: logs/app-debug.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: ERROR
+    jbr.sboot: DEBUG
+    org.hibernate: ERROR
+      
+cors:
+  domain: "http://localhost:4200"
+  headers: "origin,accept,x-requested-with,content-type,access-control-request-method,access-control-request-headers,authorization,cache-control,expires,pragma"
+  methods: "PUT,DELETE,POST,GET,OPTIONS,PATCH,HEAD"

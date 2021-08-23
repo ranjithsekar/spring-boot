@@ -1,4 +1,4 @@
-package jbr.sboot.restapi.model;
+package jbr.sboot.prod.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,19 +7,18 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Product Model.
+ * Product DTO.
  * 
  * @author Ranjith Sekar
  * @since 2018, Jun 20
  */
-
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDto {
-  private String id;
+  private Long id;
   private String name;
   private String category;
   private String price;

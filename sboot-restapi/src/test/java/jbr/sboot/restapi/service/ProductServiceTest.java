@@ -1,4 +1,4 @@
-package jbr.springboot.restapi.service;
+package jbr.sboot.restapi.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -16,15 +16,15 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import jbr.sboot.restapi.ProductMain;
-import jbr.sboot.restapi.model.Product;
-import jbr.sboot.restapi.model.ProductApiResponse;
-import jbr.sboot.restapi.model.ProductDto;
+import jbr.sboot.prod.ProductController;
+import jbr.sboot.prod.model.ProductApiResponse;
+import jbr.sboot.prod.model.ProductDto;
+import jbr.sboot.prod.model.ProductModel;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ProductMain.class)
+@SpringBootTest(classes = ProductController.class)
 public class ProductServiceTest {
-  private final String baseUrl = "http://localhost:6060/sboot-restapi/product";
+  private final String baseUrl = "http://localhost:6060/sboot-rest/api/product";
 
   private RestTemplate restTemplate;
 
@@ -52,11 +52,11 @@ public class ProductServiceTest {
   public void testGetAllProductsJson() throws URISyntaxException {
     URI uri = new URI(baseUrl + "/all");
 
-    ProductApiResponse<Product> result = restTemplate.getForObject(uri, ProductApiResponse.class);
+    ProductApiResponse<ProductModel> result = restTemplate.getForObject(uri, ProductApiResponse.class);
 
     Assert.assertTrue(result.getMessage()
         .contains("All products are retrieved successfully."));
-    List<Product> products = (List<Product>) result.getResult();
+    List<ProductModel> products = (List<ProductModel>) result.getResult();
     Assert.assertEquals(13, products.size());
   }
 
@@ -64,8 +64,8 @@ public class ProductServiceTest {
   public void testGetProductById() throws URISyntaxException {
     ObjectMapper mapper = new ObjectMapper();
     URI uri = new URI(baseUrl + "/100");
-    ProductApiResponse<Product> response = restTemplate.getForObject(uri, ProductApiResponse.class);
-    Product product = mapper.convertValue(response.getResult(), Product.class);
+    ProductApiResponse<ProductModel> response = restTemplate.getForObject(uri, ProductApiResponse.class);
+    ProductModel product = mapper.convertValue(response.getResult(), ProductModel.class);
     Assert.assertEquals("Product retrieved successfully.", response.getMessage());
     Assert.assertEquals("100", product.getId());
   }
@@ -74,9 +74,9 @@ public class ProductServiceTest {
   public void testPostAddProduct() throws URISyntaxException {
     URI uri = new URI(baseUrl + "/add");
 
-    ProductDto productDto = new ProductDto("100", "testPostAddProduct", "Jnit", "0");
+    ProductDto productDto = new ProductDto(100L, "testPostAddProduct", "Jnit", "0");
 
-    restTemplate.postForObject(uri, productDto, Product.class);
+    restTemplate.postForObject(uri, productDto, ProductModel.class);
 
     URI uriAll = new URI(baseUrl + "/all");
     ResponseEntity<String> resultAll = restTemplate.getForEntity(uriAll, String.class);

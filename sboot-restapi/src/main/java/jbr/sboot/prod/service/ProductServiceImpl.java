@@ -1,4 +1,4 @@
-package jbr.sboot.restapi.service;
+package jbr.sboot.prod.service;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jbr.sboot.restapi.dao.ProductRepository;
-import jbr.sboot.restapi.model.Product;
-import jbr.sboot.restapi.model.ProductDto;
+import jbr.sboot.prod.model.ProductModel;
+import jbr.sboot.prod.repo.ProductRepository;
+import jbr.sboot.prod.model.ProductDto;
 import lombok.extern.slf4j.Slf4j;
 
 @Transactional
@@ -22,21 +22,21 @@ public class ProductServiceImpl implements ProductService {
   private ProductRepository productRepository;
 
   @Override
-  public List<Product> getAllProducts() {
+  public List<ProductModel> getAllProducts() {
     log.info("Retrieving all products.");
     return productRepository.findAll();
   }
 
   @Override
-  public Product getProductById(String id) {
+  public ProductModel getProductById(Long id) {
     log.info("Retrieving product with id: " + id);
     return productRepository.findById(id).get();
   }
 
   @Override
-  public Product addProduct(ProductDto productDto) {
+  public ProductModel addProduct(ProductDto productDto) {
     log.info("Adding product: " + productDto.toString());
-    Product newProduct = new Product(productDto.getId(), productDto.getName(), productDto.getCategory(),
+    ProductModel newProduct = new ProductModel(productDto.getId(), productDto.getName(), productDto.getCategory(),
         productDto.getPrice());
     return productRepository.save(newProduct);
   }
@@ -44,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
   @Override
   public ProductDto updateProduct(ProductDto productDto) {
     log.info("Updating product: " + productDto.toString());
-    Product product = getProductById(productDto.getId());
+    ProductModel product = getProductById(productDto.getId());
     if (null != product) {
       BeanUtils.copyProperties(productDto, product);
       productRepository.save(product);
@@ -53,7 +53,7 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
-  public void deleteProduct(String id) {
+  public void deleteProduct(Long id) {
     log.info("Deleting produt with id: " + id);
     productRepository.deleteById(id);
   }
