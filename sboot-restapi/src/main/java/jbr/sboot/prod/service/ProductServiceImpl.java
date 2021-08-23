@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import io.micrometer.core.instrument.util.StringUtils;
+import jbr.sboot.prod.model.ProductDto;
 import jbr.sboot.prod.model.ProductModel;
 import jbr.sboot.prod.repo.ProductRepository;
-import jbr.sboot.prod.model.ProductDto;
 import lombok.extern.slf4j.Slf4j;
 
 @Transactional
@@ -30,7 +30,8 @@ public class ProductServiceImpl implements ProductService {
   @Override
   public ProductModel getProductById(Long id) {
     log.info("Retrieving product with id: " + id);
-    return productRepository.findById(id).get();
+    return productRepository.findById(id)
+        .get();
   }
 
   @Override
@@ -46,7 +47,11 @@ public class ProductServiceImpl implements ProductService {
     log.info("Updating product: " + productDto.toString());
     ProductModel product = getProductById(productDto.getId());
     if (null != product) {
-      BeanUtils.copyProperties(productDto, product);
+      // BeanUtils.copyProperties(productDto, product);
+      if (StringUtils.isNotEmpty(productDto.getName())) product.setName(productDto.getName());
+      if (StringUtils.isNotEmpty(productDto.getCategory())) product.setCategory(productDto.getCategory());
+      if (null != productDto.getPrice()) product.setPrice(productDto.getPrice());
+
       productRepository.save(product);
     }
     return productDto;

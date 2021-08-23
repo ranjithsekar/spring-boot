@@ -62,11 +62,11 @@ public class ProductController {
 
     @DeleteMapping("/delete/{id}")
     public ProductApiResponse<Void> deleteProduct(@PathVariable Long id) {
-        productService.deleteProduct(id);
+        productService.deleteProduct(Long.valueOf(id));
         return new ProductApiResponse<Void>(HttpStatus.OK.value(), "Product deleted successfully.", null);
     }
 
-    @GetMapping("/product/by-id/{id}")
+    @GetMapping("/by-id/{id}")
     public ProductApiResponse<ProductModel> getProductById(@PathVariable Long id) {
         return new ProductApiResponse<ProductModel>(HttpStatus.OK.value(), "Product retrieved successfully.",
                 productService.getProductById(id));

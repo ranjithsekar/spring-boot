@@ -74,7 +74,7 @@ public class ProductServiceTest {
   public void testPostAddProduct() throws URISyntaxException {
     URI uri = new URI(baseUrl + "/add");
 
-    ProductDto productDto = new ProductDto(100L, "testPostAddProduct", "Jnit", "0");
+    ProductDto productDto = new ProductDto(100L, "testPostAddProduct", "JUnit", 0);
 
     restTemplate.postForObject(uri, productDto, ProductModel.class);
 

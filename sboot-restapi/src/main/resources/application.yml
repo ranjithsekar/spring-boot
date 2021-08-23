@@ -10,7 +10,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: "jdbc:postgresql://localhost:5432/postgres"
+    url: "jdbc:postgresql://localhost:5432/springboot"
     username: chemexp
     password: HRW4p2bxb5ghTFZ
     
