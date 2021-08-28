@@ -1,7 +1,7 @@
 DROP TABLE category;
 
 CREATE TABLE category(
-	category_id serial PRIMARY KEY,
+	cid serial PRIMARY KEY,
 	name varchar NOT NULL	
 );
 

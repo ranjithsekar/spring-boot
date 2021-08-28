@@ -11,3 +11,6 @@ CREATE TABLE login (
 INSERT INTO login VALUES(1, 'ranjith','ranpass', now());
 INSERT INTO login VALUES(2, 'sekar','sekpass', now());
 INSERT INTO login VALUES(3, 'kabilan','kabipass', now());
+INSERT INTO login VALUES(4, 'bala','balapass', now());
+INSERT INTO login VALUES(5, 'john','johnpass', now());
+INSERT INTO login VALUES(6, 'sayeed','saypass', now());

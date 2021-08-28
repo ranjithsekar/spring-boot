@@ -17,4 +17,4 @@ CREATE TABLE address(
 
 INSERT INTO address VALUES(1,1,22,'nehru street','chennai','tamilnadu','india','600123',9876542132, now(), now());
 INSERT INTO address VALUES(2,2,23,'gandhi street','chennai','tamilnadu','india','600133',90006542132, now(), now());
-INSERT INTO address VALUES(3,3,24,'patel street','chennai','tamilnadu','india','600233',90006542000, now(), now());
+INSERT INTO address VALUES(3,3,24,'patel street','bangalore','tamilnadu','india','600233',90006542000, now(), now());
