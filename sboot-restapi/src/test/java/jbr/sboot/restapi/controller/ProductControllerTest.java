@@ -7,8 +7,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import jbr.sboot.prod.ProductController;
-import jbr.sboot.prod.service.ProductService;
+import jbr.sboot.product.ProductController;
+import jbr.sboot.product.service.ProductService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = ProductController.class)

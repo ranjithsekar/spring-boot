@@ -4,7 +4,7 @@ server:
 spring:
   data:
     rest:
-      base-path: /sboot-rest/api
+      base-path: /sboot-restapi/api
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:

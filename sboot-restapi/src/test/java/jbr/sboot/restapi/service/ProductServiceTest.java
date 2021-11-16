@@ -16,10 +16,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import jbr.sboot.prod.ProductController;
-import jbr.sboot.prod.model.ProductApiResponse;
-import jbr.sboot.prod.model.ProductDto;
-import jbr.sboot.prod.model.ProductModel;
+import jbr.sboot.product.ProductController;
+import jbr.sboot.product.model.ProductApiResponse;
+import jbr.sboot.product.model.ProductDto;
+import jbr.sboot.product.model.ProductModel;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ProductController.class)

@@ -1,9 +1,9 @@
-package jbr.sboot.prod.service;
+package jbr.sboot.product.service;
 
 import java.util.List;
 
-import jbr.sboot.prod.model.ProductModel;
-import jbr.sboot.prod.model.ProductDto;
+import jbr.sboot.product.model.ProductDto;
+import jbr.sboot.product.model.ProductModel;
 
 /**
  * Product Service.

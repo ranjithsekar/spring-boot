@@ -7,9 +7,11 @@ DROP TABLE springboot.product;
 
 CREATE TABLE springboot.product(
   id serial PRIMARY KEY,
-  name varchar NOT NULL,
-  category varchar NOT NULL,
-  price int NOT null
+  name VARCHAR NOT NULL,
+  category VARCHAR NOT NULL,
+  price INT NOT NULL,
+  created_at TIMESTAMP DEFAULT now(),
+  updated_at TIMESTAMP DEFAULT now()
 );
 
 INSERT INTO product(id, name, category, price) VALUES(1, 'Samsung S8', 'Mobile', 75000);

@@ -1,4 +1,4 @@
-package jbr.sboot.prod.service;
+package jbr.sboot.product.service;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.micrometer.core.instrument.util.StringUtils;
-import jbr.sboot.prod.model.ProductDto;
-import jbr.sboot.prod.model.ProductModel;
-import jbr.sboot.prod.repo.ProductRepository;
+import jbr.sboot.product.model.ProductDto;
+import jbr.sboot.product.model.ProductModel;
+import jbr.sboot.product.repo.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Transactional
@@ -38,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
   public ProductModel addProduct(ProductDto productDto) {
     log.info("Adding product: " + productDto.toString());
     ProductModel newProduct = new ProductModel(productDto.getId(), productDto.getName(), productDto.getCategory(),
-        productDto.getPrice());
+        productDto.getPrice(), null, null);
     return productRepository.save(newProduct);
   }
 

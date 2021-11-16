@@ -1,8 +1,8 @@
 CREATE TABLE springboot.users(
   userid PRIMARY KEY,
-  username varchar NOT NULL,
-  password varchar NOT NULL,
-  firstname varchar NOT NULL,
-  lastname varchar NOT NULL,
-  address varchar
+  username VARCHAR NOT NULL,
+  password VARCHAR NOT NULL,
+  firstname VARCHAR NOT NULL,
+  lastname VARCHAR NOT NULL,
+  address VARCHAR
 );

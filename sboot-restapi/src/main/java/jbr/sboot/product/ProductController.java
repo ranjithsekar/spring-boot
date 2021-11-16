@@ -1,4 +1,4 @@
-package jbr.sboot.prod;
+package jbr.sboot.product;
 
 import java.util.List;
 
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import jbr.sboot.prod.model.ProductModel;
-import jbr.sboot.prod.model.ProductApiResponse;
-import jbr.sboot.prod.model.ProductDto;
-import jbr.sboot.prod.service.ProductService;
+import jbr.sboot.product.model.ProductApiResponse;
+import jbr.sboot.product.model.ProductDto;
+import jbr.sboot.product.model.ProductModel;
+import jbr.sboot.product.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -30,7 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @CrossOrigin(origins = "*")
 @Slf4j
-@RequestMapping(value = "${spring.data.rest.base-path}/product")
+@RequestMapping(value = "${spring.data.rest.base-path}/products")
 public class ProductController {
 
     @Autowired
