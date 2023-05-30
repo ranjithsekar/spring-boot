@@ -1,9 +1,9 @@
-package jbr.sboot.product.service;
+package jbr.sboot.restapi.service;
 
 import java.util.List;
 
-import jbr.sboot.product.model.ProductDto;
-import jbr.sboot.product.model.ProductModel;
+import jbr.sboot.restapi.model.ProductDto;
+import jbr.sboot.restapi.model.ProductModel;
 
 /**
  * Product Service.

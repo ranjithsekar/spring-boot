@@ -1,4 +1,4 @@
-package jbr.sboot.product.service;
+package jbr.sboot.restapi.service;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.micrometer.core.instrument.util.StringUtils;
-import jbr.sboot.product.model.ProductDto;
-import jbr.sboot.product.model.ProductModel;
-import jbr.sboot.product.repo.ProductRepository;
+import jbr.sboot.restapi.model.ProductDto;
+import jbr.sboot.restapi.model.ProductModel;
+import jbr.sboot.restapi.repo.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Transactional

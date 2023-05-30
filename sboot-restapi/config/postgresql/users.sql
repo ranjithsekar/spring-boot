@@ -4,5 +4,6 @@ CREATE TABLE springboot.users(
   password VARCHAR NOT NULL,
   firstname VARCHAR NOT NULL,
   lastname VARCHAR NOT NULL,
-  address VARCHAR
+  address VARCHAR,
+  created_at TIMESTAMP DEFAULT now()
 );
