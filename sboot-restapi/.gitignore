@@ -1,9 +1,14 @@
-.gradle/
-.settings/
-bin/
-build/
-gradle/
-logs/
+# Ignore Directories
+build
+bin
+gradle
+settings
+logs
 
-.classpath
+# Ignore files
+.gradle
+.settings
 .project
+.classpath
+
+

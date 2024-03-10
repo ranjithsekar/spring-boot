@@ -2,12 +2,11 @@ package jbr.sboot.restapi.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.micrometer.core.instrument.util.StringUtils;
+import jakarta.transaction.Transactional;
 import jbr.sboot.restapi.model.ProductDto;
 import jbr.sboot.restapi.model.ProductModel;
 import jbr.sboot.restapi.repo.ProductRepository;
